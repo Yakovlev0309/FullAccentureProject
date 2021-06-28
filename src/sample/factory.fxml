@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="555.0" prefWidth="1109.0" style="-fx-background-color: #B1B5AE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.factoryController">
+   <children>
+      <Button fx:id="backBtn" layoutX="519.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />
+      <TableView fx:id="table" prefHeight="521.0" prefWidth="1109.0">
+        <columns>
+          <TableColumn fx:id="priorityClmn" prefWidth="75.0" text="Приоритет" />
+          <TableColumn fx:id="planClmn" prefWidth="75.0" text="План дата" />
+            <TableColumn fx:id="nameClmn" prefWidth="95.0" text="Наименование" />
+            <TableColumn fx:id="countClmn" prefWidth="95.0" text="Кол-во план" />
+            <TableColumn fx:id="remainsClmn" prefWidth="130.0" text="Осталось изготовить" />
+            <TableColumn fx:id="provisionClmn" prefWidth="115.0" text="Обеспеченность" />
+            <TableColumn fx:id="dateClmn" prefWidth="100.0" text="Плановая дата" />
+            <TableColumn fx:id="priceClmn" prefWidth="75.0" text="Цена" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

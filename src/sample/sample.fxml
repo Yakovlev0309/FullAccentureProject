@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <ImageView fitHeight="578.0" fitWidth="1110.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/1613713767_67-p-razmitii-fon-dlya-prezentatsii-84.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="373.0" layoutY="88.0" prefHeight="380.0" prefWidth="362.0" style="-fx-background-color: #B1B5AE; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="100.0" layoutY="20.0" text="Авторизация" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="82.0" layoutY="57.0" prefHeight="7.0" prefWidth="200.0" style="-fx-background-color: #7ACC4A;" />
+            <TextField fx:id="logIn" layoutX="81.0" layoutY="136.0" prefHeight="30.0" prefWidth="200.0" promptText="Логин" />
+            <PasswordField fx:id="pass" layoutX="82.0" layoutY="190.0" prefHeight="30.0" prefWidth="200.0" promptText="Пароль" />
+            <Button fx:id="SignBtn" layoutX="116.0" layoutY="280.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="133.0" style="-fx-background-color: #7ACC4A; -fx-background-radius: 90;" text="Войти" />
+            <ImageView fitHeight="41.0" fitWidth="40.0" layoutX="32.0" layoutY="125.0">
+               <image>
+                  <Image url="@assets/user_50px.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="37.0" layoutY="190.0">
+               <image>
+                  <Image url="@assets/password_30px.png" />
+               </image>
+            </ImageView>
+            <Hyperlink fx:id="hypertext" layoutX="203.0" layoutY="355.0" text="Зарегистрироваться" />
+            <Text fill="#686464" layoutX="38.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Еще не зарегистрированы?  - " />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

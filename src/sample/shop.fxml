@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="555.0" prefWidth="1109.0" style="-fx-background-color: #B1B5AE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.shopController">
+   <children>
+      <TabPane prefHeight="555.0" prefWidth="1109.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="shop1Btn" text="Магазин 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutY="6.0" prefHeight="483.0" prefWidth="1102.0">
+                          <columns>
+                            <TableColumn fx:id="artClmn" prefWidth="75.0" text="Артикул" />
+                            <TableColumn fx:id="nameClmn" prefWidth="95.0" text="Наименование" />
+                              <TableColumn fx:id="countClmn" prefWidth="75.0" text="Количество" />
+                              <TableColumn fx:id="priceClmn" prefWidth="75.0" text="Цена" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="backBtn" layoutX="529.0" layoutY="489.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" style="-fx-background-radius: 15;" text="Назад" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="shop2Btn" text="Магазин 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab fx:id="shop3Btn" text="Магазин 3">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
