@@ -83,7 +83,7 @@ public class Controller {
                         stage.show();
                         break;
                     case "storage":
-                        loader.setLocation(getClass().getResource("/sample/factory.fxml"));
+                        loader.setLocation(getClass().getResource("/sample/storage.fxml"));
                         storageController sC = new storageController();
                         loader.setController(sC);
                         sC.SetBuilding(user.getBuilding());
@@ -101,7 +101,7 @@ public class Controller {
                         storage_stage.show();
                         break;
                     case "store":
-                        loader.setLocation(getClass().getResource("/sample/factory.fxml"));
+                        loader.setLocation(getClass().getResource("/sample/shop.fxml"));
                         shopController stC = new shopController();
                         loader.setController(stC);
                         stC.SetBuilding(user.getBuilding());
