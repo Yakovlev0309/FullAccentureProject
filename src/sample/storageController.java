@@ -2,7 +2,11 @@ package sample;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class storageController {
@@ -28,10 +33,10 @@ public class storageController {
     private TitledPane TitledPane;
 
     @FXML
-    private TableView<?> Table;
+    private TableView<Product> table;
 
     @FXML
-    private TableColumn<?, ?> TableProd;
+    private TableColumn<Product, Integer> idClmn;
 
     @FXML
     private TableColumn<?, ?> TableCount;
@@ -62,5 +67,13 @@ public class storageController {
     }
     public void SetBuilding(Building building) {
         this.building = building;
+        ObservableList<Product> products = FXCollections.observableArrayList();
+        ArrayList<Product> prods = building.getProducts();
+        products.addAll(prods);
+        //table = new TableView<>(products);
+        //idClmn = new TableColumn<Product, Integer>("ID");
+        idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
+        //table.getColumns().add(idClmn);
+        table.setItems(products);
     }
 }

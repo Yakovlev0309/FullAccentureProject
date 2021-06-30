@@ -13,9 +13,9 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="529.0" prefWidth="1107.0">
                <children>
-                  <TableView fx:id="Table" layoutY="1.0" prefHeight="482.0" prefWidth="1109.0">
+                  <TableView fx:id="table" layoutY="1.0" prefHeight="482.0" prefWidth="1109.0">
                     <columns>
-                      <TableColumn fx:id="TableProd" prefWidth="120.0" text="Наименование" />
+                      <TableColumn fx:id="idClmn" prefWidth="120.0" text="ID" />
                       <TableColumn fx:id="TableCount" text="Количество" />
                     </columns>
                   </TableView>
