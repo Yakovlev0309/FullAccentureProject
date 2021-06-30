@@ -61,14 +61,14 @@ public class Controller {
 
             user = Facade.GetUser(logIn.getText(), pass.getText());
 
-            if (user.Type().equals("user")) {
+            if (user.getType().equals("user")) {
                 FXMLLoader loader = new FXMLLoader();
-                switch(user.GetBuilding().Type()){
+                switch(user.getBuilding().getType()){
                     case "factory":
                         loader.setLocation(getClass().getResource("/sample/factory.fxml"));
                         factoryController fC = new factoryController();
                         loader.setController(fC);
-                        fC.SetBuilding(user.GetBuilding());
+                        fC.SetBuilding(user.getBuilding());
 
                         try {
                             loader.load();
@@ -86,7 +86,7 @@ public class Controller {
                         loader.setLocation(getClass().getResource("/sample/factory.fxml"));
                         storageController sC = new storageController();
                         loader.setController(sC);
-                        sC.SetBuilding(user.GetBuilding());
+                        sC.SetBuilding(user.getBuilding());
 
                         try {
                             loader.load();
@@ -104,7 +104,7 @@ public class Controller {
                         loader.setLocation(getClass().getResource("/sample/factory.fxml"));
                         shopController stC = new shopController();
                         loader.setController(stC);
-                        stC.SetBuilding(user.GetBuilding());
+                        stC.SetBuilding(user.getBuilding());
 
                         try {
                             loader.load();

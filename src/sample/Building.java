@@ -3,26 +3,63 @@ package sample;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public abstract class Building {
-    private ArrayList<Product> products;
-    private String type;
+public class Building {
+
+    protected ArrayList<Product> products;
+    protected int id;
+    protected String type;
+    protected String name;
+
     public Building() {
         products = new ArrayList<>();
     }
-    public Building(ResultSet result) {
-        //присвоение данных из БД
-        //type = ...;
-        products = new ArrayList<>();
-    }
-    public String Type() {
-        return type;
-    }
-    public ArrayList<Product> Products() {
+
+    public ArrayList<Product> getProducts() {
         return products;
     }
+
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int CountOfProducts() {
         return products.size();
     }
-    public abstract void AddProducts(int count);
-    public abstract void SendTo(Building building, int count);
+
+    public void addProduct(Product product){
+        products.add(product);
+    }
+    //public void removeProduct(){products.remove(0);}
+
+    public void sendTo(Building building, int count){
+        for(int i = 0; i < count; i++){
+            building.addProduct(products.get(0));
+            products.get(0).SetNewLocation(building);
+            products.remove(0);
+        }
+    }
 }
