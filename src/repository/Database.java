@@ -13,9 +13,9 @@ public class Database {
     }
 
     public static Connection getConnection() throws SQLException {
-        //Class.forName(DB_Driver);
+
 //        try {
-//
+//            Class.forName(DB_Driver);
 //        } catch (ClassNotFoundException e) {
 //            e.printStackTrace();
 //        }
