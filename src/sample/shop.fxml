@@ -17,7 +17,7 @@
                      <children>
                         <TableView layoutY="6.0" prefHeight="483.0" prefWidth="1102.0">
                           <columns>
-                            <TableColumn fx:id="artClmn" prefWidth="75.0" text="Артикул" />
+                            <TableColumn fx:id="idClmn" prefWidth="75.0" text="Артикул" />
                             <TableColumn fx:id="nameClmn" prefWidth="95.0" text="Наименование" />
                               <TableColumn fx:id="countClmn" prefWidth="75.0" text="Количество" />
                               <TableColumn fx:id="priceClmn" prefWidth="75.0" text="Цена" />
