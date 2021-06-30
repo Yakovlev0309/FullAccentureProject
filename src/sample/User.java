@@ -50,10 +50,11 @@ public class User {
 
     @Override
     public String toString(){
-        return "User\n" +
-                username+"\n" +
-                password+"\n" +
-                type+"\n";
+        return "User {username = "+username+"; password = "+password+"; type = "+type+";}";
+//        return "User\n" +
+//                username+"\n" +
+//                password+"\n" +
+//                type+"\n";
     }
     public static void main (String[] args){
         try {
