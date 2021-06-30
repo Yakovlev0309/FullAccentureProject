@@ -72,7 +72,7 @@ public class factoryController {
             stage.setScene(new Scene(root, 1109, 555));
             stage.show();
         });
-
+        //Обращение к ячейкам
     }
 
     public void SetBuilding(Building building) {

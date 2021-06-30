@@ -63,61 +63,50 @@ public class Controller {
 
             if (user.getType().equals("user")) {
                 FXMLLoader loader = new FXMLLoader();
+                Parent root;
+                Stage stage = new Stage();
                 switch(user.getBuilding().getType()){
                     case "factory":
                         loader.setLocation(getClass().getResource("/sample/factory.fxml"));
-                        factoryController fC = new factoryController();
-                        loader.setController(fC);
-                        fC.SetBuilding(user.getBuilding());
-
                         try {
                             loader.load();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
-                        Parent root = loader.getRoot();
-                        Stage stage = new Stage();
+                        factoryController fC = loader.getController();
+                        fC.SetBuilding(user.getBuilding());
+                        root = loader.getRoot();
                         stage.setTitle("Завод");
                         stage.setScene(new Scene(root, 1109, 555));
                         stage.show();
                         break;
                     case "storage":
                         loader.setLocation(getClass().getResource("/sample/storage.fxml"));
-                        storageController sC = new storageController();
-                        loader.setController(sC);
-                        sC.SetBuilding(user.getBuilding());
-
                         try {
                             loader.load();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
-                        Parent storage_root = loader.getRoot();
-                        Stage storage_stage = new Stage();
-                        storage_stage.setTitle("Завод");
-                        storage_stage.setScene(new Scene(storage_root, 1109, 555));
-                        storage_stage.show();
+                        storageController storageC = loader.getController();
+                        storageC.SetBuilding(user.getBuilding());
+                        root = loader.getRoot();
+                        stage.setTitle("Склад");
+                        stage.setScene(new Scene(root, 1109, 555));
+                        stage.show();
                         break;
                     case "store":
                         loader.setLocation(getClass().getResource("/sample/shop.fxml"));
-                        shopController stC = new shopController();
-                        loader.setController(stC);
-                        stC.SetBuilding(user.getBuilding());
-
                         try {
                             loader.load();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
-                        Parent store_root = loader.getRoot();
-                        Stage store_stage = new Stage();
-                        store_stage.setTitle("Завод");
-                        store_stage.setScene(new Scene(store_root, 1109, 555));
-                        store_stage.show();
-                        break;
+                        shopController shopC = loader.getController();
+                        shopC.SetBuilding(user.getBuilding());
+                        root = loader.getRoot();
+                        stage.setTitle("Магазин");
+                        stage.setScene(new Scene(root, 1109, 555));
+                        stage.show();
                 }
             } else {
                 FXMLLoader loader = new FXMLLoader();
