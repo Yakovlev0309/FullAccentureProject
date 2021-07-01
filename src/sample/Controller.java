@@ -61,7 +61,7 @@ public class Controller {
 
             user = Facade.GetUser(logIn.getText(), pass.getText());
 
-            if (user.getType().equals("user")) {
+            if (user.getType().equals("worker")) {
                 FXMLLoader loader = new FXMLLoader();
                 Parent root;
                 Stage stage = new Stage();
