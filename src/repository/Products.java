@@ -11,11 +11,17 @@ public class Products extends BaseTable{
     public static ArrayList<Product> getProducts (Building building){
         ArrayList<Product> list = new ArrayList<>();
         ResultSet products;
-        Product product;
+        Product product = new Product();
         try {
             products = getDataSQL("SELECT * FROM PRODUCTS WHERE BUILDING_ID = (SELECT ID FROM BUILDINGS WHERE NAME = '"+building.getName()+"')");
             while (products.next()){
-                product = new Product(products.getInt("ID"));
+                //product = new Product(products.getInt("ID"));
+                product.setId(products.getInt("ID"));
+                product.setBuilding(building);
+                product.setShift(products.getString("SHIFT_NAME"));
+                product.setDateAndTime(products.getTimestamp("DATEANDTIME"));
+                product.setDefect(products.getBoolean("IS_DEFECT"));
+                //product.setUser(Users.getUser(product));
                 list.add(product);
             }
         } catch (SQLException throwables) {

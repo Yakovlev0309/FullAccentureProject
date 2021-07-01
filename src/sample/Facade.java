@@ -9,6 +9,6 @@ public class Facade {
     }*/
 
     public static User GetUser(String username, String password) {
-        return Users.GetUser(username, password);
+        return Users.getUser(username, password);
     }
 }

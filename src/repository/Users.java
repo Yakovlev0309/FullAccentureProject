@@ -1,12 +1,13 @@
 package repository;
 
+import sample.Product;
 import sample.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Users extends BaseTable{
-    public static User GetUser(String username, String password){
+    public static User getUser(String username, String password){
         ResultSet result;
         User user;
         try {
@@ -37,4 +38,9 @@ public class Users extends BaseTable{
 //    }
         return user;
     }
+//    public static User getUser(Product product){
+//        ResultSet result;
+//        User user = new User();
+//        result = getDataSQL("")
+//    }
 }

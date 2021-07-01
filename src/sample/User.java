@@ -1,12 +1,8 @@
 package sample;
 
-import repository.Buildings;
 import repository.Database;
 import repository.Users;
 
-import javax.xml.crypto.Data;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class User {
@@ -99,7 +95,7 @@ public class User {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        User user = Users.GetUser("store2worker","worker");
+        User user = Users.getUser("store2worker","worker");
         Building building = user.getBuilding();
         ArrayList<Product> products = building.getProducts();
         System.out.println(user);
