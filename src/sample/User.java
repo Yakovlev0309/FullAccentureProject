@@ -16,9 +16,12 @@ public class User {
     private Building building;
     private String shift; // смена работника
     private Double efficiency; //вероятность сделать без брака
+    private String name;
+    private String surname;
 
     public User(){}
 
+    //region Геттеры и сеттеры {...}
     public String getUsername() {
         return username;
     }
@@ -67,14 +70,29 @@ public class User {
         this.efficiency = efficiency;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+    //endregion
+
     @Override
     public String toString(){
-        return "User {username = "+username+"; password = "+password+"; type = "+type+";}";
-//        return "User\n" +
-//                username+"\n" +
-//                password+"\n" +
-//                type+"\n";
+        return name+" "+surname;
     }
+
+    //region Тестовый метод {...}
     public static void main (String[] args){
         try {
             Database db = new Database();
@@ -86,4 +104,5 @@ public class User {
         ArrayList<Product> products = building.getProducts();
         System.out.println(user);
     }
+    //endregion
 }

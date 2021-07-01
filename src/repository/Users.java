@@ -19,6 +19,8 @@ public class Users extends BaseTable{
             user.setBuilding(Buildings.GetAssignedBuilding(user));
             user.setShift(result.getString("SHIFT_NAME"));
             user.setEfficiency(result.getDouble("EFFICIENCY"));
+            user.setName(result.getString("NAME"));
+            user.setSurname(result.getString("SURNAME"));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return new User();
