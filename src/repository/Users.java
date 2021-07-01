@@ -10,13 +10,15 @@ public class Users extends BaseTable{
         ResultSet result;
         User user;
         try {
-            result = getDataSQL("SELECT * FROM USERS, USER_TYPES WHERE USERNAME = '"+username+"' AND PASSWORD = '"+password+"'");
+            result = getDataSQL("SELECT * FROM USERS INNER JOIN SHIFTS ON USERS.SHIFT_ID=SHIFTS.ID INNER JOIN USER_TYPES ON USERS.TYPE_ID=USER_TYPES.ID WHERE USERNAME = '"+username+"' AND PASSWORD = '"+password+"'");
             result.next();
             user = new User();
             user.setUsername(result.getString("USERNAME"));
             user.setPassword(result.getString("PASSWORD"));
             user.setType(result.getString("TYPE_NAME"));
             user.setBuilding(Buildings.GetAssignedBuilding(user));
+            user.setShift(result.getString("SHIFT_NAME"));
+            user.setEfficiency(result.getDouble("EFFICIENCY"));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return new User();

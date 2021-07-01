@@ -14,6 +14,9 @@ public class User {
     private String password;
     private String type;
     private Building building;
+    private String shift; // смена работника
+    private Double efficiency; //вероятность сделать без брака
+
     public User(){}
 
     public String getUsername() {
@@ -46,6 +49,22 @@ public class User {
 
     public void setBuilding(Building building) {
         this.building = building;
+    }
+
+    public String getShift() {
+        return shift;
+    }
+
+    public void setShift(String shift) {
+        this.shift = shift;
+    }
+
+    public Double getEfficiency() {
+        return efficiency;
+    }
+
+    public void setEfficiency(Double efficiency) {
+        this.efficiency = efficiency;
     }
 
     @Override
