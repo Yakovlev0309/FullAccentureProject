@@ -15,8 +15,13 @@
                <children>
                   <TableView fx:id="table" layoutY="1.0" prefHeight="482.0" prefWidth="1109.0">
                     <columns>
-                      <TableColumn fx:id="idClmn" prefWidth="120.0" text="ID" />
-                      <TableColumn fx:id="TableCount" text="Количество" />
+                        <TableColumn fx:id="idClmn" prefWidth="25.0" text="ID" />
+                        <TableColumn fx:id="userClmn" prefWidth="175.0" text="Изготовил" />
+                        <TableColumn fx:id="shiftClmn" prefWidth="50.0" text="Смена" />
+                        <TableColumn fx:id="typeClmn" prefWidth="60.0" text="Вид" />
+                        <TableColumn fx:id="priceClmn" prefWidth="100.0" text="Стоимость" />
+                        <TableColumn fx:id="dateClmn" prefWidth="130.0" text="Произведено" />
+                        <TableColumn fx:id="defectClmn" prefWidth="70.0" text="Брак" />
                     </columns>
                   </TableView>
                </children>

@@ -2,6 +2,7 @@ package sample;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -39,7 +40,22 @@ public class storageController {
     private TableColumn<Product, Integer> idClmn;
 
     @FXML
-    private TableColumn<?, ?> TableCount;
+    private TableColumn<Product, String> userClmn;
+
+    @FXML
+    private TableColumn<Product, String> shiftClmn;
+
+    @FXML
+    private TableColumn<Product, String> typeClmn;
+
+    @FXML
+    private TableColumn<Product, Double> priceClmn;
+
+    @FXML
+    private TableColumn<Product, Timestamp> dateClmn;
+
+    @FXML
+    private TableColumn<Product, Boolean> defectClmn;
 
     private Building building;
 
@@ -73,6 +89,12 @@ public class storageController {
         //table = new TableView<>(products);
         //idClmn = new TableColumn<Product, Integer>("ID");
         idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
+        userClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
+        shiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
+        typeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
+        priceClmn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
+        dateClmn.setCellValueFactory(new PropertyValueFactory<Product, Timestamp>("dateAndTime"));
+        defectClmn.setCellValueFactory(new PropertyValueFactory<Product, Boolean>("isDefect"));
         //table.getColumns().add(idClmn);
         table.setItems(products);
     }
