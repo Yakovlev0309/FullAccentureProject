@@ -10,12 +10,12 @@ public class Product {
     //Уникальный номер для каждого продукта
     private int id;
     private Building building;
-    //private User user;
+    private String user;//имя и фамилия
     private String shift;//смена, когда было произведено
     private static final String type = "product";
     private static final double price = 45.5;
     private Timestamp dateAndTime;//время производства
-    private boolean isDefect;
+    private boolean isDefect;//можно в виде строки "Да"/"Нет"
 
     //region Геттеры и сеттеры {...}
     //Метод доступа к уникальному номеру
@@ -35,13 +35,13 @@ public class Product {
         this.building = building;
     }
 
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 
     public String getShift() {
         return shift;
@@ -76,9 +76,9 @@ public class Product {
     }
     //endregion
 
-    public Product(int id) {
-        this.id = id;
-    }
+//    public Product(int id) {
+//        this.id = id;
+//    }
 
     public Product(){}
 

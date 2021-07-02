@@ -38,6 +38,17 @@ public class Users extends BaseTable{
 //    }
         return user;
     }
+    public static String getUser(Product product){
+        ResultSet result;
+        String user = "";
+        try {
+            result = getDataSQL("SELECT NAME, SURNAME FROM USERS WHERE ID = (SELECT USER_ID FROM PRODUCTS WHERE ID="+product.getId()+")");
+            user = result.getString("NAME")+" "+result.getString("SURNAME");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return user;
+    }
 //    public static User getUser(Product product){
 //        ResultSet result;
 //        User user = new User();

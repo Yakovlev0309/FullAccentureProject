@@ -2,6 +2,7 @@ package repository;
 
 import sample.Building;
 import sample.Product;
+import sample.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,13 +16,15 @@ public class Products extends BaseTable{
         try {
             products = getDataSQL("SELECT * FROM PRODUCTS WHERE BUILDING_ID = (SELECT ID FROM BUILDINGS WHERE NAME = '"+building.getName()+"')");
             while (products.next()){
-                //product = new Product(products.getInt("ID"));
                 product.setId(products.getInt("ID"));
                 product.setBuilding(building);
-                product.setShift(products.getString("SHIFT_NAME"));
+                {
+                    int shiftId = products.getInt("SHIFT_ID");
+                    product.setShift(getDataSQL("SELECT * FROM SHIFTS WHERE ID = " + shiftId).getString("SHIFT_NAME"));
+                }
                 product.setDateAndTime(products.getTimestamp("DATEANDTIME"));
                 product.setDefect(products.getBoolean("IS_DEFECT"));
-                //product.setUser(Users.getUser(product));
+                product.setUser(Users.getUser(product));
                 list.add(product);
             }
         } catch (SQLException throwables) {
@@ -36,10 +39,11 @@ public class Products extends BaseTable{
             throwables.printStackTrace();
         }
     }
-    public static Product createNewProduct(Building building){
+    public static Product createNewProduct(Building building, User user, int count){
         ResultSet result;
         Product product = new Product();
         try {
+            //TODO изменить команду, т.к. у продукта стало больше полей
             modifyDatabase("INSERT INTO PRODUCTS (BUILDING_ID) VALUES("+building.getId()+")");
             result = getDataSQL("SELECT * FROM PRODUCTS ORDER BY ID DESC LIMIT 1");
             product.setId(result.getInt("ID"));

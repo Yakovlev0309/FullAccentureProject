@@ -8,8 +8,8 @@ public class Factory extends Building {
 
     public Factory(){super();}
 
-    public void createProducts(int count){
-        products.add(Products.createNewProduct(this));
+    public void createProducts(User user, int count){
+        products.add(Products.createNewProduct(this, user, count));
     }
 }
 
