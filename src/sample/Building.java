@@ -62,4 +62,9 @@ public class Building {
             products.remove(0);
         }
     }
+
+    @Override
+    public String toString(){
+        return name;
+    }
 }
