@@ -43,6 +43,7 @@ public class Users extends BaseTable{
         String user = "";
         try {
             result = getDataSQL("SELECT NAME, SURNAME FROM USERS WHERE ID = (SELECT USER_ID FROM PRODUCTS WHERE ID="+product.getId()+")");
+            result.next();
             user = result.getString("NAME")+" "+result.getString("SURNAME");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
