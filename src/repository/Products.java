@@ -12,18 +12,21 @@ public class Products extends BaseTable{
     public static ArrayList<Product> getProducts (Building building){
         ArrayList<Product> list = new ArrayList<>();
         ResultSet products;
-        Product product = new Product();
+        Product product;
         try {
             products = getDataSQL("SELECT * FROM PRODUCTS WHERE BUILDING_ID = (SELECT ID FROM BUILDINGS WHERE NAME = '"+building.getName()+"')");
             while (products.next()){
+                product = new Product();
                 product.setId(products.getInt("ID"));
                 product.setBuilding(building);
                 {
                     int shiftId = products.getInt("SHIFT_ID");
-                    product.setShift(getDataSQL("SELECT * FROM SHIFTS WHERE ID = " + shiftId).getString("SHIFT_NAME"));
+                    ResultSet shift = getDataSQL("SELECT * FROM SHIFTS WHERE ID = " + shiftId);
+                    shift.next();
+                    product.setShift(shift.getString("SHIFT_NAME"));
                 }
                 product.setDateAndTime(products.getTimestamp("DATEANDTIME"));
-                product.setDefect(products.getBoolean("IS_DEFECT"));
+                product.setIsDefect(products.getBoolean("IS_DEFECT"));
                 product.setUser(Users.getUser(product));
                 list.add(product);
             }
