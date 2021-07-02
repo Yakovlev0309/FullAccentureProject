@@ -3,8 +3,6 @@ package sample;
 import repository.Products;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Optional;
 
 public class Product {
     //Уникальный номер для каждого продукта
@@ -67,11 +65,11 @@ public class Product {
         this.dateAndTime = dateAndTime;
     }
 
-    public boolean isDefect() {
+    public boolean getIsDefect() {
         return isDefect;
     }
 
-    public void setDefect(boolean defect) {
+    public void setIsDefect(boolean defect) {
         isDefect = defect;
     }
     //endregion
