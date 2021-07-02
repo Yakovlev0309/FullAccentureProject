@@ -83,13 +83,14 @@ public class factoryController {
 
     public void SetBuilding(Building building) {
         this.building = building;
+        UpdateTable();
+    }
+    public void UpdateTable(){
         ObservableList<Product> products = FXCollections.observableArrayList();
         ArrayList<Product> prods = building.getProducts();
         products.addAll(prods);
-        //table = new TableView<>(products);//новая таблица
-        //idClmn = new TableColumn<Product, Integer>("ID");//новая колонка
-
-        //связывание колонки и данных класса с помощью фабрики
+        //table = new TableView<>(products);
+        //idClmn = new TableColumn<Product, Integer>("ID");
         idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
         userClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
         shiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));

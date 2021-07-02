@@ -78,11 +78,15 @@ public class storageController {
             stage.setTitle("Главное меню");
             stage.setScene(new Scene(root, 1109, 555));
             stage.show();
+
         });
 
     }
     public void SetBuilding(Building building) {
         this.building = building;
+        UpdateTable();
+    }
+    public void UpdateTable(){
         ObservableList<Product> products = FXCollections.observableArrayList();
         ArrayList<Product> prods = building.getProducts();
         products.addAll(prods);
