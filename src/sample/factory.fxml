@@ -11,14 +11,13 @@
       <Button fx:id="backBtn" layoutX="519.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />
       <TableView fx:id="table" prefHeight="521.0" prefWidth="1109.0">
         <columns>
-          <TableColumn fx:id="idClmn" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="planClmn" prefWidth="75.0" text="План дата" />
-            <TableColumn fx:id="nameClmn" prefWidth="95.0" text="Наименование" />
-            <TableColumn fx:id="countClmn" prefWidth="95.0" text="Кол-во план" />
-            <TableColumn fx:id="remainsClmn" prefWidth="130.0" text="Осталось изготовить" />
-            <TableColumn fx:id="provisionClmn" prefWidth="115.0" text="Обеспеченность" />
-            <TableColumn fx:id="dateClmn" prefWidth="100.0" text="Плановая дата" />
-            <TableColumn fx:id="priceClmn" prefWidth="75.0" text="Цена" />
+          <TableColumn fx:id="idClmn" prefWidth="25.0" text="ID" />
+          <TableColumn fx:id="userClmn" prefWidth="175.0" text="Изготовил" />
+            <TableColumn fx:id="shiftClmn" prefWidth="50.0" text="Смена" />
+            <TableColumn fx:id="typeClmn" prefWidth="60.0" text="Вид" />
+            <TableColumn fx:id="priceClmn" prefWidth="100.0" text="Стоимость" />
+            <TableColumn fx:id="dateClmn" prefWidth="130.0" text="Произведено" />
+            <TableColumn fx:id="defectClmn" prefWidth="70.0" text="Брак" />
         </columns>
       </TableView>
    </children>

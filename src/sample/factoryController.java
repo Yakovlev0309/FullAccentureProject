@@ -2,6 +2,7 @@ package sample;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
@@ -37,25 +38,22 @@ public class factoryController {
     private TableColumn<Product, Integer> idClmn;
 
     @FXML
-    private TableColumn<?, ?> planClmn;
+    private TableColumn<Product, String> userClmn;
 
     @FXML
-    private TableColumn<?, ?> nameClmn;
+    private TableColumn<Product, String> shiftClmn;
 
     @FXML
-    private TableColumn<?, ?> countClmn;
+    private TableColumn<Product, String> typeClmn;
 
     @FXML
-    private TableColumn<?, ?> remainsClmn;
+    private TableColumn<Product, Double> priceClmn;
 
     @FXML
-    private TableColumn<?, ?> provisionClmn;
+    private TableColumn<Product, Timestamp> dateClmn;
 
     @FXML
-    private TableColumn<?, ?> dateClmn;
-
-    @FXML
-    private TableColumn<?, ?> priceClmn;
+    private TableColumn<Product, Boolean> defectClmn;
 
     private Building building;
 
@@ -93,7 +91,12 @@ public class factoryController {
 
         //связывание колонки и данных класса с помощью фабрики
         idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
-
+        userClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
+        shiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
+        typeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
+        priceClmn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
+        dateClmn.setCellValueFactory(new PropertyValueFactory<Product, Timestamp>("dateAndTime"));
+        defectClmn.setCellValueFactory(new PropertyValueFactory<Product, Boolean>("isDefect"));
         //table.getColumns().add(idClmn);
         table.setItems(products);
     }
