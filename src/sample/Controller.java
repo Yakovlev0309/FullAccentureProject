@@ -74,7 +74,7 @@ public class Controller {
                             e.printStackTrace();
                         }
                         factoryController fC = loader.getController();
-                        fC.SetBuilding(user.getBuilding());
+                        fC.SetUser(user);
                         root = loader.getRoot();
                         stage.setTitle("Завод");
                         stage.setScene(new Scene(root, 1109, 555));
@@ -108,6 +108,7 @@ public class Controller {
                         stage.setScene(new Scene(root, 1109, 555));
                         stage.show();
                 }
+                //Скрыть кнопку назад
             } else {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/sample/general.fxml"));

@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
     public class generalController {
@@ -19,7 +21,7 @@ import javafx.stage.Stage;
         private URL location;
 
         @FXML
-        private Button shopBtn;
+        private MenuButton shopBtn;
 
         @FXML
         private Button storageBtn;
@@ -27,13 +29,24 @@ import javafx.stage.Stage;
         @FXML
         private Button factoryBtn;
 
+        @FXML
+        private MenuItem shop1Btn;
+
+        @FXML
+        private MenuItem shop2Btn;
+
+        @FXML
+        private MenuItem shop3Btn;
+
+        private User user;
 
     @FXML
     void initialize() {
+        FXMLLoader loader = new FXMLLoader();
         storageBtn.setOnAction(event -> {
             storageBtn.getScene().getWindow().hide();
 
-            FXMLLoader loader = new FXMLLoader();
+
             loader.setLocation(getClass().getResource("/sample/storage.fxml"));
 
 
@@ -50,10 +63,9 @@ import javafx.stage.Stage;
             stage.showAndWait();
         });
 
-        shopBtn.setOnAction(event -> {
+        shop1Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
 
-            FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/sample/shop.fxml"));
 
             try {
@@ -65,15 +77,14 @@ import javafx.stage.Stage;
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setTitle("Магазины");
-            stage.setScene(new Scene(root, 1109, 555));
-            stage.show();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
         });
 
-        factoryBtn.setOnAction(event -> {
-            factoryBtn.getScene().getWindow().hide();
+        shop2Btn.setOnAction(event -> {
+            shopBtn.getScene().getWindow().hide();
 
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/sample/factory.fxml"));
+            loader.setLocation(getClass().getResource("/sample/shop.fxml"));
 
             try {
                 loader.load();
@@ -83,9 +94,49 @@ import javafx.stage.Stage;
 
             Parent root = loader.getRoot();
             Stage stage = new Stage();
-            stage.setTitle("Завод");
+            stage.setTitle("Магазины");
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
+
+        shop3Btn.setOnAction(event -> {
+            shopBtn.getScene().getWindow().hide();
+
+            loader.setLocation(getClass().getResource("/sample/shop.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setTitle("Магазины");
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        });
+
+        factoryBtn.setOnAction(event -> {
+            factoryBtn.getScene().getWindow().hide();
+
+            loader.setLocation(getClass().getResource("/sample/factory.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            factoryController fC = loader.getController();
+            fC.SetUser(user);
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setTitle("Завод");
+            stage.setScene(new Scene(root, 1109, 555));
+            stage.show();
+        });
+    }
+
+    public void SetUser(User user) {
+        this.user = user;
     }
 }

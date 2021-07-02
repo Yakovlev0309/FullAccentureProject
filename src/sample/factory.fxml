@@ -1,24 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="555.0" prefWidth="1109.0" style="-fx-background-color: #B1B5AE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.factoryController">
-   <children>
-      <Button fx:id="backBtn" layoutX="519.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />
-      <TableView fx:id="table" prefHeight="521.0" prefWidth="1109.0">
-        <columns>
-          <TableColumn fx:id="idClmn" prefWidth="25.0" text="ID" />
-          <TableColumn fx:id="userClmn" prefWidth="175.0" text="Изготовил" />
-            <TableColumn fx:id="shiftClmn" prefWidth="50.0" text="Смена" />
-            <TableColumn fx:id="typeClmn" prefWidth="60.0" text="Вид" />
-            <TableColumn fx:id="priceClmn" prefWidth="100.0" text="Стоимость" />
-            <TableColumn fx:id="dateClmn" prefWidth="130.0" text="Произведено" />
-            <TableColumn fx:id="defectClmn" prefWidth="70.0" text="Брак" />
-        </columns>
-      </TableView>
-   </children>
+    <children>
+        <TabPane prefHeight="520.0" prefWidth="1109.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Товары">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="872.0">
+                            <children>
+                                <TableView fx:id="productTable" prefHeight="492.0" prefWidth="1109.0">
+                                    <columns>
+                                        <TableColumn fx:id="idClmn" prefWidth="75.0" text="ID" />
+                                        <TableColumn fx:id="typeClmn" prefWidth="95.0" text="Наименование" />
+                                        <TableColumn fx:id="priceClmn" prefWidth="75.0" text="Цена" />
+                                        <TableColumn fx:id="defectClmn" prefWidth="75.0" text="Брак" />
+                                        <TableColumn fx:id="pShiftClmn" prefWidth="75.0" text="Смена" />
+                                        <TableColumn fx:id="pNameClmn" prefWidth="75.0" text="Сотрудник" />
+                                        <TableColumn fx:id="dateClmn" prefWidth="118.0" text="Дата изготовления" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Сотрудники">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="872.0">
+                            <children>
+                                <TableView fx:id="userTable" prefHeight="492.0" prefWidth="1109.0">
+                                    <columns>
+                                        <TableColumn fx:id="nameClmn" prefWidth="75.0" text="Имя" />
+                                        <TableColumn fx:id="surnameClmn" prefWidth="95.0" text="Фамилия" />
+                                        <TableColumn fx:id="usernameClmn" prefWidth="75.0" text="Логин" />
+                                        <TableColumn fx:id="passwordClmn" prefWidth="75.0" text="Пароль" />
+                                        <TableColumn fx:id="shiftClmn" prefWidth="95.0" text="Смена" />
+                                        <TableColumn fx:id="efficiencyClmn" prefWidth="130.0" text="Эффективность" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="backBtn" layoutX="519.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />
+    </children>
 </AnchorPane>

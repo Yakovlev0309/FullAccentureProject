@@ -12,10 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -23,6 +20,9 @@ public class storageController {
 
     @FXML
     private ResourceBundle resources;
+
+    @FXML
+    private Tab prodTab;
 
     @FXML
     private URL location;
@@ -37,10 +37,10 @@ public class storageController {
     private TableView<Product> table;
 
     @FXML
-    private TableColumn<Product, Integer> idClmn;
+    private TableColumn<Product, Integer> artClmn;
 
     @FXML
-    private TableColumn<Product, String> userClmn;
+    private TableColumn<Product, String> nameClmn;
 
     @FXML
     private TableColumn<Product, String> shiftClmn;
@@ -57,12 +57,53 @@ public class storageController {
     @FXML
     private TableColumn<Product, Boolean> defectClmn;
 
+    @FXML
+    private Button backBtn2;
+
+    @FXML
+    private Tab staffTab;
+
+    @FXML
+    private Button backBtn1;
+
+    @FXML
+    private TableView<?> table2;
+
+    @FXML
+    private TableColumn<?, ?> priorityClmn2;
+
+    @FXML
+    private TableColumn<?, ?> planClmn2;
+
+    @FXML
+    private TableColumn<?, ?> nameClmn2;
+
     private Building building;
 
     @FXML
     void initialize() {
-        backBtn.setOnAction(event -> {
-            backBtn.getScene().getWindow().hide();
+        backBtn1.setOnAction(event -> {
+            backBtn1.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/general.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setTitle("Главное меню");
+            stage.setScene(new Scene(root, 1109, 555));
+            stage.show();
+
+        });
+
+        backBtn2.setOnAction(event -> {
+            backBtn2.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/sample/general.fxml"));
@@ -92,8 +133,8 @@ public class storageController {
         products.addAll(prods);
         //table = new TableView<>(products);
         //idClmn = new TableColumn<Product, Integer>("ID");
-        idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
-        userClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
+        artClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
+        nameClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
         shiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
         typeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
         priceClmn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
