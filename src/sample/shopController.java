@@ -2,6 +2,7 @@ package sample;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -30,17 +31,28 @@ public class shopController {
     private Tab shop1Btn;
 
     @FXML
+    private TableView<Product> table;
+
+    @FXML
     private TableColumn<Product, Integer> idClmn;
 
     @FXML
-    private TableColumn<?, ?> nameClmn;
+    private TableColumn<Product, String> userClmn;
 
     @FXML
-    private TableColumn<?, ?> countClmn;
+    private TableColumn<Product, String> shiftClmn;
 
     @FXML
-    private TableColumn<?, ?> priceClmn;
+    private TableColumn<Product, String> typeClmn;
 
+    @FXML
+    private TableColumn<Product, Double> priceClmn;
+
+    @FXML
+    private TableColumn<Product, Timestamp> dateClmn;
+
+    @FXML
+    private TableColumn<Product, Boolean> defectClmn;
     @FXML
     private Button backBtn;
 
@@ -77,12 +89,21 @@ public class shopController {
     }
     public void SetBuilding(Building building) {
         this.building = building;
+        UpdateTable();
+    }
+    public void UpdateTable(){
         ObservableList<Product> products = FXCollections.observableArrayList();
         ArrayList<Product> prods = building.getProducts();
         products.addAll(prods);
-        TableView<Product> table = new TableView<>(products);
+        //table = new TableView<>(products);
         //idClmn = new TableColumn<Product, Integer>("ID");
-        idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));
+        idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
+        userClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
+        shiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
+        typeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
+        priceClmn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
+        dateClmn.setCellValueFactory(new PropertyValueFactory<Product, Timestamp>("dateAndTime"));
+        defectClmn.setCellValueFactory(new PropertyValueFactory<Product, Boolean>("isDefect"));
         //table.getColumns().add(idClmn);
         table.setItems(products);
     }

@@ -15,12 +15,15 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="shopTable" layoutY="6.0" prefHeight="483.0" prefWidth="1102.0">
+                        <TableView fx:id="table" layoutY="6.0" prefHeight="483.0" prefWidth="1102.0">
                           <columns>
-                            <TableColumn fx:id="idClmn" prefWidth="75.0" text="Артикул" />
-                            <TableColumn fx:id="nameClmn" prefWidth="95.0" text="Наименование" />
-                              <TableColumn fx:id="countClmn" prefWidth="75.0" text="Количество" />
-                              <TableColumn fx:id="priceClmn" prefWidth="75.0" text="Цена" />
+                              <TableColumn fx:id="idClmn" prefWidth="25.0" text="ID" />
+                              <TableColumn fx:id="userClmn" prefWidth="175.0" text="Изготовил" />
+                              <TableColumn fx:id="shiftClmn" prefWidth="50.0" text="Смена" />
+                              <TableColumn fx:id="typeClmn" prefWidth="60.0" text="Вид" />
+                              <TableColumn fx:id="priceClmn" prefWidth="100.0" text="Стоимость" />
+                              <TableColumn fx:id="dateClmn" prefWidth="130.0" text="Произведено" />
+                              <TableColumn fx:id="defectClmn" prefWidth="70.0" text="Брак" />
                           </columns>
                         </TableView>
                         <Button fx:id="backBtn" layoutX="529.0" layoutY="489.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" style="-fx-background-radius: 15;" text="Назад" />
