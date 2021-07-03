@@ -20,6 +20,7 @@ public class Buildings extends BaseTable{
             building.setType(result.getString("TYPE_NAME"));
             building.setName(result.getString("NAME"));
             building.setProducts(Products.getProducts(building));
+            building.setUsers(Users.getUsers(building));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

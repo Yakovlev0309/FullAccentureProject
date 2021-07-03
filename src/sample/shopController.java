@@ -33,50 +33,43 @@ public class shopController {
     @FXML
     private javafx.scene.control.TitledPane TitledPane;
 
+    //region Товары {...}
     @FXML
     private TableView<Product> productTable;
-
-    @FXML
-    private TableView<User> userTable;
-
     @FXML
     private TableColumn<Product, Integer> idClmn;
-
     @FXML
-    private TableColumn<Product, String> pNameClmn;
-
-    @FXML
-    private TableColumn<Product, String> pShiftClmn;
-
-    @FXML
-    private TableColumn<Product, String> typeClmn;
-
+    private TableColumn<Product, String> ptypeClmn;
     @FXML
     private TableColumn<Product, Double> priceClmn;
-
-    @FXML
-    private TableColumn<Product, Timestamp> dateClmn;
-
     @FXML
     private TableColumn<Product, Boolean> defectClmn;
+    @FXML
+    private TableColumn<Product, String> pShiftClmn;
+    @FXML
+    private TableColumn<Product, String> pNameClmn;
+    @FXML
+    private TableColumn<Product, Timestamp> dateClmn;
+    //endregion
 
+    //region Пользователи {...}
+    @FXML
+    private TableView<User> userTable;
     @FXML
     private TableColumn<User, String> nameClmn;
-
     @FXML
     private TableColumn<User, String> surnameClmn;
-
     @FXML
-    private TableColumn<User, String> passwordClmn;
-
+    private TableColumn<User, String> typeClmn;
     @FXML
     private TableColumn<User, String> usernameClmn;
-
+    @FXML
+    private TableColumn<User, String> passwordClmn;
     @FXML
     private TableColumn<User, String> shiftClmn;
-
     @FXML
     private TableColumn<User, String> efficiencyClmn;
+    //endregion
 
     private User user;
 
@@ -106,20 +99,30 @@ public class shopController {
         this.user = user;
         UpdateTable();
     }
-    public void UpdateTable() {
+    public void UpdateTable(){
         ObservableList<Product> products = FXCollections.observableArrayList();
-        ArrayList<Product> prods = user.getBuilding().getProducts();
-        products.addAll(prods);
-        //table = new TableView<>(products);
-        //idClmn = new TableColumn<Product, Integer>("ID");
+        ObservableList<User> users = FXCollections.observableArrayList();
+
+        products.addAll(user.getBuilding().getProducts());
+        users.addAll(user.getBuilding().getUsers());
+
         idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
-        pNameClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
-//        pShiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
-//        typeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
+        ptypeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
         priceClmn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
-//        dateClmn.setCellValueFactory(new PropertyValueFactory<Product, Timestamp>("dateAndTime"));
-//        defectClmn.setCellValueFactory(new PropertyValueFactory<Product, Boolean>("isDefect"));
-        //table.getColumns().add(idClmn);
+        defectClmn.setCellValueFactory(new PropertyValueFactory<Product, Boolean>("isDefect"));
+        pShiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
+        pNameClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
+        dateClmn.setCellValueFactory(new PropertyValueFactory<Product, Timestamp>("dateAndTime"));
+
+        nameClmn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        surnameClmn.setCellValueFactory(new PropertyValueFactory<>("surname"));
+        typeClmn.setCellValueFactory(new PropertyValueFactory<>("type"));
+        usernameClmn.setCellValueFactory(new PropertyValueFactory<>("username"));
+        passwordClmn.setCellValueFactory(new PropertyValueFactory<>("password"));
+        shiftClmn.setCellValueFactory(new PropertyValueFactory<>("shift"));
+        efficiencyClmn.setCellValueFactory(new PropertyValueFactory<>("efficiency"));
+
         productTable.setItems(products);
+        userTable.setItems(users);
     }
 }

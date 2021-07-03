@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Building {
 
     protected ArrayList<Product> products;
+    protected ArrayList<User> users;
     protected int id;
     protected String type;
     protected String name;
@@ -20,6 +21,14 @@ public class Building {
 
     public void setProducts(ArrayList<Product> products) {
         this.products = products;
+    }
+
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
     }
 
     public int getId() {

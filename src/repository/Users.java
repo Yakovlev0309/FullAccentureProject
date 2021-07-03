@@ -1,10 +1,12 @@
 package repository;
 
+import sample.Building;
 import sample.Product;
 import sample.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Users extends BaseTable{
     public static User getUser(String username, String password){
@@ -26,17 +28,40 @@ public class Users extends BaseTable{
             throwables.printStackTrace();
             return new User();
         }
-//        User user = new User();
-//        user.setUsername(result.getString("USERNAME"));
-
-//        public User(ResultSet result) throws SQLException {
-//        result.next();
-//        username = result.getString("USERNAME");
-//        password = result.getString("PASSWORD");
-//        type = result.getString("TYPE_NAME");
-//        //building = Buildings.GetAssignedBuilding(result);
-//    }
         return user;
+    }
+    public static ArrayList<User> getUsers(Building building){
+        ArrayList<User> users = new ArrayList<>();
+        ResultSet result;
+        User user;
+        try {
+            result = getDataSQL("SELECT * FROM USERS WHERE BUILDING_ID = (SELECT ID FROM BUILDINGS WHERE NAME = '"+building.getName()+"')");
+            while (result.next()){
+                user = new User();
+                user.setUsername(result.getString("USERNAME"));
+                user.setPassword(result.getString("PASSWORD"));
+                {
+                    //Установка типа
+                    ResultSet type = getDataSQL("SELECT * FROM USER_TYPES WHERE ID ="+result.getInt("TYPE_ID"));
+                    type.next();
+                    user.setType(type.getString("TYPE_NAME"));
+                }
+                user.setBuilding(building);
+                {
+                    //Установка смены
+                    ResultSet shift = getDataSQL("SELECT * FROM SHIFTS WHERE ID ="+result.getInt("SHIFT_ID"));
+                    shift.next();
+                    user.setShift(shift.getString("SHIFT_NAME"));
+                }
+                user.setEfficiency(result.getDouble("EFFICIENCY"));
+                user.setName(result.getString("NAME"));
+                user.setSurname(result.getString("SURNAME"));
+                users.add(user);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return users;
     }
     public static String getUser(Product product){
         ResultSet result;

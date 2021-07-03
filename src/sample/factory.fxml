@@ -17,13 +17,13 @@
                             <children>
                                 <TableView fx:id="productTable" prefHeight="492.0" prefWidth="1109.0">
                                     <columns>
-                                        <TableColumn fx:id="idClmn" prefWidth="75.0" text="ID" />
-                                        <TableColumn fx:id="typeClmn" prefWidth="95.0" text="Наименование" />
+                                        <TableColumn fx:id="idClmn" prefWidth="30.0" text="ID" />
+                                        <TableColumn fx:id="ptypeClmn" prefWidth="80.0" text="Наименование" />
                                         <TableColumn fx:id="priceClmn" prefWidth="75.0" text="Цена" />
-                                        <TableColumn fx:id="defectClmn" prefWidth="75.0" text="Брак" />
-                                        <TableColumn fx:id="pShiftClmn" prefWidth="75.0" text="Смена" />
-                                        <TableColumn fx:id="pNameClmn" prefWidth="75.0" text="Сотрудник" />
-                                        <TableColumn fx:id="dateClmn" prefWidth="118.0" text="Дата изготовления" />
+                                        <TableColumn fx:id="defectClmn" prefWidth="50.0" text="Брак" />
+                                        <TableColumn fx:id="pShiftClmn" prefWidth="50.0" text="Смена" />
+                                        <TableColumn fx:id="pNameClmn" prefWidth="150.0" text="Сотрудник" />
+                                        <TableColumn fx:id="dateClmn" prefWidth="120.0" text="Дата изготовления" />
                                     </columns>
                                 </TableView>
                             </children>
@@ -38,10 +38,11 @@
                                     <columns>
                                         <TableColumn fx:id="nameClmn" prefWidth="75.0" text="Имя" />
                                         <TableColumn fx:id="surnameClmn" prefWidth="95.0" text="Фамилия" />
-                                        <TableColumn fx:id="usernameClmn" prefWidth="75.0" text="Логин" />
+                                        <TableColumn fx:id="typeClmn" prefWidth="70.0" text="Статус" />
+                                        <TableColumn fx:id="usernameClmn" prefWidth="100.0" text="Логин" />
                                         <TableColumn fx:id="passwordClmn" prefWidth="75.0" text="Пароль" />
-                                        <TableColumn fx:id="shiftClmn" prefWidth="95.0" text="Смена" />
-                                        <TableColumn fx:id="efficiencyClmn" prefWidth="130.0" text="Эффективность" />
+                                        <TableColumn fx:id="shiftClmn" prefWidth="70.0" text="Смена" />
+                                        <TableColumn fx:id="efficiencyClmn" prefWidth="105.0" text="Эффективность" />
                                     </columns>
                                 </TableView>
                             </children>
