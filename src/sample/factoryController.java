@@ -18,7 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class factoryController implements EnhancedController {
+public class factoryController extends BuildingController implements EnhancedController {
 
     @FXML
     private ResourceBundle resources;
@@ -29,11 +29,11 @@ public class factoryController implements EnhancedController {
     @FXML
     private Tab productTab;
 
-    @FXML
-    public Tab userTab;
-
-    @FXML
-    public Button backBtn;
+//    @FXML
+//    public Tab userTab;
+//
+//    @FXML
+//    public Button backBtn;
     //region Товары {...}
     @FXML
     private TableView<Product> productTable;
@@ -72,11 +72,10 @@ public class factoryController implements EnhancedController {
     private TableColumn<User, String> efficiencyClmn;
     //endregion
 
-    private User user;
+//    private User user;
 
     @FXML
     void initialize() {
-        backBtn.setVisible(false);
         backBtn.setOnAction(event -> {
 //            backBtn.getScene().getWindow().hide();
 //
@@ -103,8 +102,9 @@ public class factoryController implements EnhancedController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            //todo заменить на EnhancedController
             generalController gC = loader.getController();
-            gC.SetUser(user);
+            gC.setUser(user);
             root = loader.getRoot();
             stage.setTitle("Главное меню");
             stage.setScene(new Scene(root, 1109, 555));
@@ -112,12 +112,7 @@ public class factoryController implements EnhancedController {
         });
     }
 
-    public void SetUser(User user) {
-        this.user = user;
-        UpdateTable();
-    }
-
-    public void UpdateTable(){
+    public void updateTable(){
         ObservableList<Product> products = FXCollections.observableArrayList();
         ObservableList<User> users = FXCollections.observableArrayList();
 
@@ -142,11 +137,5 @@ public class factoryController implements EnhancedController {
 
         productTable.setItems(products);
         userTable.setItems(users);
-    }
-    public void hideBackButton(){
-        backBtn.setVisible(false);
-    }
-    public void hideUserTab(){
-        userTab.setDisable(true);
     }
 }

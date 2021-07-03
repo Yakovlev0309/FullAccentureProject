@@ -3,7 +3,6 @@ package sample;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -16,20 +15,22 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class shopController implements EnhancedController{
+public class shopController extends BuildingController implements EnhancedController{
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private Tab prodTab;
-    @FXML
-    private Tab userTab;
-    @FXML
-    private URL location;
 
-    @FXML
-    private Button backBtn;
+//    @FXML
+//    private Tab userTab;
+
+//    @FXML
+//    private URL location;
+
+//    @FXML
+//    private Button backBtn;
 
     @FXML
     private javafx.scene.control.TitledPane TitledPane;
@@ -72,7 +73,7 @@ public class shopController implements EnhancedController{
     private TableColumn<User, String> efficiencyClmn;
     //endregion
 
-    private User user;
+//    private User user;
 
     @FXML
     void initialize() {
@@ -88,19 +89,17 @@ public class shopController implements EnhancedController{
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            //todo заменить на EnhancedController
             generalController gC = loader.getController();
-            gC.SetUser(user);
+            gC.setUser(user);
             root = loader.getRoot();
             stage.setTitle("Главное меню");
             stage.setScene(new Scene(root, 1109, 555));
             stage.show();
         });
     }
-    public void SetUser(User user) {
-        this.user = user;
-        UpdateTable();
-    }
-    public void UpdateTable(){
+
+    public void updateTable(){
         ObservableList<Product> products = FXCollections.observableArrayList();
         ObservableList<User> users = FXCollections.observableArrayList();
 
@@ -125,11 +124,5 @@ public class shopController implements EnhancedController{
 
         productTable.setItems(products);
         userTable.setItems(users);
-    }
-    public void hideBackButton(){
-        backBtn.setVisible(false);
-    }
-    public void hideUserTab(){
-        userTab.setDisable(true);
     }
 }

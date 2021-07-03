@@ -67,8 +67,8 @@ public class Controller {
             Stage stage = new Stage();
             String url = null;
             String title = "";
-            EnhancedController controller;
-            Consumer<EnhancedController> consumer = (c)->{};
+            BuildingController controller;
+            Consumer<BuildingController> consumer = (c)->{};
             if (user.getType().equals("worker")) {
                 consumer = (c)->{c.hideBackButton();c.hideUserTab();};
                 switch(user.getBuilding().getType()){
@@ -97,7 +97,7 @@ public class Controller {
                     e.printStackTrace();
                 }
                 controller = loader.getController();
-                controller.SetUser(user);
+                controller.setUser(user);
                 consumer.accept(controller);
                 root = loader.getRoot();
                 stage.setTitle(title);

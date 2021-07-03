@@ -43,6 +43,7 @@ import javafx.stage.Stage;
     @FXML
     void initialize() {
         FXMLLoader loader = new FXMLLoader();
+        //TODO вынести общий код, как в Controller.java
         storageBtn.setOnAction(event -> {
             storageBtn.getScene().getWindow().hide();
 
@@ -53,7 +54,7 @@ import javafx.stage.Stage;
                 e.printStackTrace();
             }
             storageController storageC = loader.getController();
-            storageC.SetUser(user);
+            storageC.setUser(user);
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setTitle("Склад");
@@ -71,7 +72,7 @@ import javafx.stage.Stage;
                 e.printStackTrace();
             }
             shopController shopC = loader.getController();
-            shopC.SetUser(user);
+            shopC.setUser(user);
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setTitle("Магазин");
@@ -89,7 +90,7 @@ import javafx.stage.Stage;
                 e.printStackTrace();
             }
             shopController shopC = loader.getController();
-            shopC.SetUser(user);
+            shopC.setUser(user);
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setTitle("Магазин");
@@ -107,7 +108,7 @@ import javafx.stage.Stage;
                 e.printStackTrace();
             }
             shopController shopC = loader.getController();
-            shopC.SetUser(user);
+            shopC.setUser(user);
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setTitle("Магазин");
@@ -125,7 +126,7 @@ import javafx.stage.Stage;
                 e.printStackTrace();
             }
             factoryController fC = loader.getController();
-            fC.SetUser(user);
+            fC.setUser(user);
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setTitle("Завод");
@@ -134,10 +135,7 @@ import javafx.stage.Stage;
         });
     }
 
-    public void SetUser(User user) {
+    public void setUser(User user) {
         this.user = user;
     }
-    public void UpdateTable(){}
-    public void hideBackButton(){}
-    public void hideUserTab(){}
 }
