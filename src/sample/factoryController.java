@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,7 +28,13 @@ public class factoryController {
     private URL location;
 
     @FXML
-    private Button backBtn;
+    private Tab productTab;
+
+    @FXML
+    public Tab userTab;
+
+    @FXML
+    public Button backBtn;
 
     @FXML
     private TableView<Product> productTable;

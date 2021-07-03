@@ -11,7 +11,7 @@
     <children>
         <TabPane prefHeight="520.0" prefWidth="1109.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
-                <Tab text="Товары">
+                <Tab fx:id="productTab" text="Товары">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="872.0">
                             <children>
@@ -30,7 +30,7 @@
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab text="Сотрудники">
+                <Tab fx:id="userTab" text="Сотрудники">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="872.0">
                             <children>

@@ -46,75 +46,73 @@ import javafx.stage.Stage;
         storageBtn.setOnAction(event -> {
             storageBtn.getScene().getWindow().hide();
 
-
             loader.setLocation(getClass().getResource("/sample/storage.fxml"));
-
-
             try {
                 loader.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            storageController storageC = loader.getController();
+            storageC.SetUser(user);
             Parent root = loader.getRoot();
             Stage stage = new Stage();
-            stage.setTitle("Склады");
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            stage.setTitle("Склад");
+            stage.setScene(new Scene(root, 1109, 555));
+            stage.show();
         });
 
         shop1Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
 
             loader.setLocation(getClass().getResource("/sample/shop.fxml"));
-
             try {
                 loader.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            shopController shopC = loader.getController();
+            shopC.SetUser(user);
             Parent root = loader.getRoot();
             Stage stage = new Stage();
-            stage.setTitle("Магазины");
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            stage.setTitle("Магазин");
+            stage.setScene(new Scene(root, 1109, 555));
+            stage.show();
         });
 
         shop2Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
 
             loader.setLocation(getClass().getResource("/sample/shop.fxml"));
-
             try {
                 loader.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            shopController shopC = loader.getController();
+            shopC.SetUser(user);
             Parent root = loader.getRoot();
             Stage stage = new Stage();
-            stage.setTitle("Магазины");
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            stage.setTitle("Магазин");
+            stage.setScene(new Scene(root, 1109, 555));
+            stage.show();
         });
 
         shop3Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
 
             loader.setLocation(getClass().getResource("/sample/shop.fxml"));
-
             try {
                 loader.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            shopController shopC = loader.getController();
+            shopC.SetUser(user);
             Parent root = loader.getRoot();
             Stage stage = new Stage();
-            stage.setTitle("Магазины");
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            stage.setTitle("Магазин");
+            stage.setScene(new Scene(root, 1109, 555));
+            stage.show();
         });
 
         factoryBtn.setOnAction(event -> {

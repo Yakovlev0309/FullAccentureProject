@@ -22,7 +22,10 @@ public class storageController {
     private ResourceBundle resources;
 
     @FXML
-    private Tab prodTab;
+    private Tab productTab;
+
+    @FXML
+    private Tab userTab;
 
     @FXML
     private URL location;
@@ -34,16 +37,16 @@ public class storageController {
     private TitledPane TitledPane;
 
     @FXML
-    private TableView<Product> table;
+    private TableView<Product> productTable;
 
     @FXML
-    private TableColumn<Product, Integer> artClmn;
+    private TableColumn<Product, Integer> idClmn;
 
     @FXML
-    private TableColumn<Product, String> nameClmn;
+    private TableColumn<Product, String> pNameClmn;
 
     @FXML
-    private TableColumn<Product, String> shiftClmn;
+    private TableColumn<Product, String> pShiftClmn;
 
     @FXML
     private TableColumn<Product, String> typeClmn;
@@ -58,89 +61,71 @@ public class storageController {
     private TableColumn<Product, Boolean> defectClmn;
 
     @FXML
-    private Button backBtn2;
+    private TableView<User> userTable;
 
     @FXML
-    private Tab staffTab;
+    private TableColumn<?, ?> countClmn;
 
     @FXML
-    private Button backBtn1;
+    private TableColumn<User, String> nameClmn;
 
     @FXML
-    private TableView<?> table2;
+    private TableColumn<User, String> surnameClmn;
 
     @FXML
-    private TableColumn<?, ?> priorityClmn2;
+    private TableColumn<User, String> passwordClmn;
 
     @FXML
-    private TableColumn<?, ?> planClmn2;
+    private TableColumn<User, String> usernameClmn;
 
     @FXML
-    private TableColumn<?, ?> nameClmn2;
+    private TableColumn<User, String> shiftClmn;
 
-    private Building building;
+    @FXML
+    private TableColumn<User, String> efficiencyClmn;
+
+    private User user;
 
     @FXML
     void initialize() {
-        backBtn1.setOnAction(event -> {
-            backBtn1.getScene().getWindow().hide();
+        backBtn.setOnAction(event -> {
+            backBtn.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
+            Parent root;
+            Stage stage = new Stage();
             loader.setLocation(getClass().getResource("/sample/general.fxml"));
-
             try {
                 loader.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
+            generalController gC = loader.getController();
+            gC.SetUser(user);
+            root = loader.getRoot();
             stage.setTitle("Главное меню");
             stage.setScene(new Scene(root, 1109, 555));
             stage.show();
-
         });
-
-        backBtn2.setOnAction(event -> {
-            backBtn2.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/sample/general.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setTitle("Главное меню");
-            stage.setScene(new Scene(root, 1109, 555));
-            stage.show();
-
-        });
-
     }
-    public void SetBuilding(Building building) {
-        this.building = building;
+    public void SetUser(User user) {
+        this.user = user;
         UpdateTable();
     }
     public void UpdateTable(){
         ObservableList<Product> products = FXCollections.observableArrayList();
-        ArrayList<Product> prods = building.getProducts();
+        ArrayList<Product> prods = user.getBuilding().getProducts();
         products.addAll(prods);
         //table = new TableView<>(products);
         //idClmn = new TableColumn<Product, Integer>("ID");
-        artClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
-        nameClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
-        shiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
-        typeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
+        idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
+        pNameClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
+//        pShiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
+//        typeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
         priceClmn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
-        dateClmn.setCellValueFactory(new PropertyValueFactory<Product, Timestamp>("dateAndTime"));
-        defectClmn.setCellValueFactory(new PropertyValueFactory<Product, Boolean>("isDefect"));
+//        dateClmn.setCellValueFactory(new PropertyValueFactory<Product, Timestamp>("dateAndTime"));
+//        defectClmn.setCellValueFactory(new PropertyValueFactory<Product, Boolean>("isDefect"));
         //table.getColumns().add(idClmn);
-        table.setItems(products);
+        productTable.setItems(products);
     }
 }

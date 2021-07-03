@@ -11,33 +11,31 @@
     <children>
         <TabPane prefHeight="555.0" prefWidth="1109.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
-                <Tab fx:id="prodTab" text="Товар">
+                <Tab fx:id="productTab" text="Товар">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <TableView prefHeight="492.0" prefWidth="1109.0">
+                                <TableView fx:id="productTable" prefHeight="492.0" prefWidth="1109.0">
                                     <columns>
-                                        <TableColumn fx:id="artClmn" prefWidth="75.0" text="Артикул" />
-                                        <TableColumn fx:id="nameClmn" prefWidth="95.0" text="Наименование" />
+                                        <TableColumn fx:id="idClmn" prefWidth="75.0" text="ID" />
+                                        <TableColumn fx:id="pNameClmn" prefWidth="95.0" text="Наименование" />
                                         <TableColumn fx:id="countClmn" prefWidth="75.0" text="Количество" />
                                         <TableColumn fx:id="priceClmn" prefWidth="75.0" text="Цена" />
                                     </columns>
                                 </TableView>
-                                <Button fx:id="backBtn" layoutX="521.0" layoutY="494.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />
                             </children></AnchorPane>
                     </content>
                 </Tab>
-                <Tab fx:id="staffTab" text="Сотрудники">
+                <Tab fx:id="userTab" text="Сотрудники">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <Button fx:id="backBtn1" layoutX="521.0" layoutY="494.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />
-                                <TableView fx:id="table2" prefHeight="492.0" prefWidth="1109.0">
+                                <TableView fx:id="userTable" prefHeight="492.0" prefWidth="1109.0">
                                     <columns>
-                                        <TableColumn fx:id="priorityClmn2" prefWidth="75.0" text="Логин" />
-                                        <TableColumn prefWidth="75.0" text="Пароль" />
-                                        <TableColumn fx:id="planClmn2" prefWidth="75.0" text="Имя" />
-                                        <TableColumn fx:id="nameClmn2" prefWidth="95.0" text="Фамилия" />
+                                        <TableColumn fx:id="usernameClmn" prefWidth="75.0" text="Логин" />
+                                        <TableColumn fx:id="passwordClmn" prefWidth="75.0" text="Пароль" />
+                                        <TableColumn fx:id="nameClmn" prefWidth="75.0" text="Имя" />
+                                        <TableColumn fx:id="surnameClmn" prefWidth="95.0" text="Фамилия" />
                                     </columns>
                                 </TableView>
                             </children></AnchorPane>
@@ -45,5 +43,6 @@
                 </Tab>
             </tabs>
         </TabPane>
+        <Button fx:id="backBtn" layoutX="521.0" layoutY="494.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" style="-fx-background-radius: 15;" text="Назад" />
     </children>
 </AnchorPane>
