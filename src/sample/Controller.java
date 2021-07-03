@@ -69,6 +69,7 @@ public class Controller {
             String title = "";
             BuildingController controller;
             Consumer<BuildingController> consumer = (c)->{};
+            //todo заменить на switch
             if (user.getType().equals("worker")) {
                 consumer = (c)->{c.hideBackButton();c.hideUserTab();};
                 switch(user.getBuilding().getType()){
@@ -85,7 +86,12 @@ public class Controller {
                         url = "/sample/shop.fxml";
                         title = "Магазин";
                 }
-            } else {
+            } else if(user.getType().equals("department_director")){
+                consumer = (c)-> c.hideBackButton();
+                //TODO заменить, так как работает только с заводом
+                url = "/sample/factory.fxml";
+                title = "Главное меню";
+            }else {
                 url = "/sample/general.fxml";
                 title = "Главное меню";
             }
