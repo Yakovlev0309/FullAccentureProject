@@ -75,15 +75,11 @@ public class Controller {
                     case "factory":
                         url = "/sample/factory.fxml";
                         title = "Завод";
-                        //fC.backBtn.setVisible(false);  Скрытие кнопки назад для обычных сотрудников
-                        //Необходимо скрывать ещё вкладку "Сотрудники", т.к. это только для администраторов и главы:
-                        //fC.userTab.setDisable(true); Скрытие вкладки (на неё нельзя нажать)
 
                         break;
                     case "storage":
                         url = "/sample/storage.fxml";
                         title = "Склад";
-                        //storageC.backBtn.setVisible(false);  Скрытие кнопки назад для обычных сотрудников
                         break;
                     case "store":
                         url = "/sample/shop.fxml";
