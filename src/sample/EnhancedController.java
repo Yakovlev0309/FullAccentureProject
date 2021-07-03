@@ -14,10 +14,4 @@ public interface EnhancedController {
     public void UpdateTable();
     public void  hideBackButton();
     public void  hideUserTab();
-//    public default void hideBackButton(){
-//        backBtn.setVisible(false);
-//    }
-//    public default void hideUserTab(){
-//        userTab.setDisable(true);
-//    }
 }
