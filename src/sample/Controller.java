@@ -3,6 +3,8 @@ package sample;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -60,75 +62,53 @@ public class Controller {
             SignBtn.getScene().getWindow().hide();
 
             user = Facade.GetUser(logIn.getText(), pass.getText());
-
+            FXMLLoader loader = new FXMLLoader();
+            Parent root;
+            Stage stage = new Stage();
+            String url = null;
+            String title = "";
+            EnhancedController controller;
+            Consumer<EnhancedController> consumer = (c)->{};
             if (user.getType().equals("worker")) {
-                FXMLLoader loader = new FXMLLoader();
-                Parent root;
-                Stage stage = new Stage();
+                consumer = (c)->{c.hideBackButton();c.hideUserTab();};
                 switch(user.getBuilding().getType()){
                     case "factory":
-                        loader.setLocation(getClass().getResource("/sample/factory.fxml"));
-                        try {
-                            loader.load();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        factoryController fC = loader.getController();
-                        fC.SetUser(user);
+                        url = "/sample/factory.fxml";
+                        title = "Завод";
                         //fC.backBtn.setVisible(false);  Скрытие кнопки назад для обычных сотрудников
                         //Необходимо скрывать ещё вкладку "Сотрудники", т.к. это только для администраторов и главы:
                         //fC.userTab.setDisable(true); Скрытие вкладки (на неё нельзя нажать)
-                        root = loader.getRoot();
-                        stage.setTitle("Завод");
-                        stage.setScene(new Scene(root, 1109, 555));
-                        stage.show();
+
                         break;
                     case "storage":
-                        loader.setLocation(getClass().getResource("/sample/storage.fxml"));
-                        try {
-                            loader.load();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        storageController storageC = loader.getController();
-                        storageC.SetUser(user);
+                        url = "/sample/storage.fxml";
+                        title = "Склад";
                         //storageC.backBtn.setVisible(false);  Скрытие кнопки назад для обычных сотрудников
-                        root = loader.getRoot();
-                        stage.setTitle("Склад");
-                        stage.setScene(new Scene(root, 1109, 555));
-                        stage.show();
                         break;
                     case "store":
-                        loader.setLocation(getClass().getResource("/sample/shop.fxml"));
-                        try {
-                            loader.load();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        shopController shopC = loader.getController();
-                        shopC.SetUser(user);
-                        //shopC.backBtn.setVisible(false);  Скрытие кнопки назад для обычных сотрудников
-                        root = loader.getRoot();
-                        stage.setTitle("Магазин");
-                        stage.setScene(new Scene(root, 1109, 555));
-                        stage.show();
+                        url = "/sample/shop.fxml";
+                        title = "Магазин";
                 }
             } else {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/sample/general.fxml"));
-
+                url = "/sample/general.fxml";
+                title = "Главное меню";
+            }
+            if(url != null){
+                loader.setLocation(getClass().getResource(url));
                 try {
                     loader.load();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
-                Parent root = loader.getRoot();
-                Stage stage = new Stage();
-                stage.setTitle("Главное меню");
+                controller = loader.getController();
+                controller.SetUser(user);
+                consumer.accept(controller);
+                root = loader.getRoot();
+                stage.setTitle(title);
                 stage.setScene(new Scene(root, 1109, 555));
                 stage.show();
             }
+
         });
     }
 }

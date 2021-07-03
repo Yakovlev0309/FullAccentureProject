@@ -15,7 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class storageController {
+public class storageController implements EnhancedController{
 
     @FXML
     private ResourceBundle resources;
@@ -126,5 +126,11 @@ public class storageController {
 
         productTable.setItems(products);
         userTable.setItems(users);
+    }
+    public void hideBackButton(){
+        backBtn.setVisible(false);
+    }
+    public void hideUserTab(){
+        userTab.setDisable(true);
     }
 }

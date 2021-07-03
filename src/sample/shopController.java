@@ -16,14 +16,15 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class shopController {
+public class shopController implements EnhancedController{
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private Tab prodTab;
-
+    @FXML
+    private Tab userTab;
     @FXML
     private URL location;
 
@@ -124,5 +125,11 @@ public class shopController {
 
         productTable.setItems(products);
         userTable.setItems(users);
+    }
+    public void hideBackButton(){
+        backBtn.setVisible(false);
+    }
+    public void hideUserTab(){
+        userTab.setDisable(true);
     }
 }

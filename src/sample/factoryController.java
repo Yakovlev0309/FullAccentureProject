@@ -18,7 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class factoryController {
+public class factoryController implements EnhancedController {
 
     @FXML
     private ResourceBundle resources;
@@ -34,7 +34,6 @@ public class factoryController {
 
     @FXML
     public Button backBtn;
-
     //region Товары {...}
     @FXML
     private TableView<Product> productTable;
@@ -77,7 +76,7 @@ public class factoryController {
 
     @FXML
     void initialize() {
-
+        backBtn.setVisible(false);
         backBtn.setOnAction(event -> {
 //            backBtn.getScene().getWindow().hide();
 //
@@ -143,5 +142,11 @@ public class factoryController {
 
         productTable.setItems(products);
         userTable.setItems(users);
+    }
+    public void hideBackButton(){
+        backBtn.setVisible(false);
+    }
+    public void hideUserTab(){
+        userTab.setDisable(true);
     }
 }

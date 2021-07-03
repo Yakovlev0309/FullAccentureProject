@@ -12,7 +12,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
-    public class generalController {
+    public class generalController implements EnhancedController {
 
         @FXML
         private ResourceBundle resources;
@@ -137,4 +137,7 @@ import javafx.stage.Stage;
     public void SetUser(User user) {
         this.user = user;
     }
+    public void UpdateTable(){}
+    public void hideBackButton(){}
+    public void hideUserTab(){}
 }
