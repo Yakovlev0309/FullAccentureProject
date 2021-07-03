@@ -11,22 +11,35 @@ import java.util.ArrayList;
 public class Users extends BaseTable{
     public static User getUser(String username, String password){
         ResultSet result;
-        User user;
+        User user = new User();
         try {
-            result = getDataSQL("SELECT * FROM USERS INNER JOIN SHIFTS ON USERS.SHIFT_ID=SHIFTS.ID INNER JOIN USER_TYPES ON USERS.TYPE_ID=USER_TYPES.ID WHERE USERNAME = '"+username+"' AND PASSWORD = '"+password+"'");
+            result = getDataSQL("SELECT * FROM USERS WHERE USERNAME = '"+username+"' AND PASSWORD = '"+password+"'");
             result.next();
             user = new User();
             user.setUsername(result.getString("USERNAME"));
             user.setPassword(result.getString("PASSWORD"));
-            user.setType(result.getString("TYPE_NAME"));
+            {
+                int typeId = result.getInt("TYPE_ID");
+                ResultSet type = getDataSQL("SELECT * FROM USER_TYPES WHERE ID ="+typeId);
+                type.next();
+                user.setType(type.getString("TYPE_NAME" ));
+            }
             user.setBuilding(Buildings.GetAssignedBuilding(user));
-            user.setShift(result.getString("SHIFT_NAME"));
+            {
+                int shiftId = result.getInt("SHIFT_ID");
+                ResultSet shift = getDataSQL("SELECT * FROM SHIFTS WHERE ID="+shiftId);
+                shift.next();
+                try {
+                    user.setShift(shift.getString("SHIFT_NAME" ));
+                } catch (SQLException throwables) {
+                    user.setShift("");
+                }
+            }
             user.setEfficiency(result.getDouble("EFFICIENCY"));
             user.setName(result.getString("NAME"));
             user.setSurname(result.getString("SURNAME"));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            return new User();
         }
         return user;
     }

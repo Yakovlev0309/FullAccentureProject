@@ -22,7 +22,7 @@ public class Buildings extends BaseTable{
             building.setProducts(Products.getProducts(building));
             building.setUsers(Users.getUsers(building));
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            //throwables.printStackTrace();
         }
         return building;
     }
