@@ -69,31 +69,58 @@ public class Controller {
             String title = "";
             BuildingController controller;
             Consumer<BuildingController> consumer = (c)->{};
-            //todo заменить на switch
-            if (user.getType().equals("worker")) {
-                consumer = (c)->{c.hideBackButton();c.hideUserTab();};
-                switch(user.getBuilding().getType()){
-                    case "factory":
-                        url = "/sample/factory.fxml";
-                        title = "Завод";
-
-                        break;
-                    case "storage":
-                        url = "/sample/storage.fxml";
-                        title = "Склад";
-                        break;
-                    case "store":
-                        url = "/sample/shop.fxml";
-                        title = "Магазин";
-                }
-            } else if(user.getType().equals("department_director")){
-                consumer = (c)-> c.hideBackButton();
-                //TODO заменить, так как работает только с заводом
-                url = "/sample/factory.fxml";
-                title = "Главное меню";
-            }else {
-                url = "/sample/general.fxml";
-                title = "Главное меню";
+//            if (user.getType().equals("worker")) {
+//                consumer = (c)->{c.hideBackButton();c.hideUserTab();};
+//                switch(user.getBuilding().getType()){
+//                    case "factory":
+//                        url = "/sample/factory.fxml";
+//                        title = "Завод";
+//
+//                        break;
+//                    case "storage":
+//                        url = "/sample/storage.fxml";
+//                        title = "Склад";
+//                        break;
+//                    case "store":
+//                        url = "/sample/shop.fxml";
+//                        title = "Магазин";
+//                }
+//            } else if(user.getType().equals("department_director")){
+//                consumer = (c)-> c.hideBackButton();
+//                //TODO заменить, так как работает только с заводом
+//                url = "/sample/factory.fxml";
+//                title = "Главное меню";
+//            }else {
+//                url = "/sample/general.fxml";
+//                title = "Главное меню";
+//            }
+            switch (user.getType()) {
+                case "worker":
+                    consumer = (c)->{c.hideBackButton();c.hideUserTab();};
+                    switch(user.getBuilding().getType()){
+                        case "factory":
+                            url = "/sample/factory.fxml";
+                            title = "Завод";
+                            break;
+                        case "storage":
+                            url = "/sample/storage.fxml";
+                            title = "Склад";
+                            break;
+                        case "store":
+                            url = "/sample/shop.fxml";
+                            title = "Магазин";
+                    }
+                    break;
+                case "department_director":
+                    consumer = (c)-> c.hideBackButton();
+                    //TODO заменить, так как работает только с заводом
+                    url = "/sample/factory.fxml";
+                    title = "Главное меню";
+                    break;
+                default:
+                    url = "/sample/general.fxml";
+                    title = "Главное меню";
+                    break;
             }
             if(url != null){
                 loader.setLocation(getClass().getResource(url));

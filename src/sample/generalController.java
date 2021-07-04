@@ -3,6 +3,8 @@ package sample;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -40,99 +42,60 @@ import javafx.stage.Stage;
 
         private User user;
 
+        private String url = null, title = "";
+
     @FXML
     void initialize() {
         FXMLLoader loader = new FXMLLoader();
-        //TODO вынести общий код, как в Controller.java
+        Parent root;
+        Stage stage = new Stage();
+        BuildingController controller;
+        Consumer<BuildingController> consumer = (c)->{};
         storageBtn.setOnAction(event -> {
             storageBtn.getScene().getWindow().hide();
-
-            loader.setLocation(getClass().getResource("/sample/storage.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            storageController storageC = loader.getController();
-            storageC.setUser(user);
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setTitle("Склад");
-            stage.setScene(new Scene(root, 1109, 555));
-            stage.show();
+            SetUrlAndTitle("/sample/storage.fxml", "Склад");
         });
 
         shop1Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
-
-            loader.setLocation(getClass().getResource("/sample/shop.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            shopController shopC = loader.getController();
-            shopC.setUser(user);
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setTitle("Магазин");
-            stage.setScene(new Scene(root, 1109, 555));
-            stage.show();
+            SetUrlAndTitle("/sample/shop.fxml", "Магазин");
         });
 
         shop2Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
-
-            loader.setLocation(getClass().getResource("/sample/shop.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            shopController shopC = loader.getController();
-            shopC.setUser(user);
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setTitle("Магазин");
-            stage.setScene(new Scene(root, 1109, 555));
-            stage.show();
+            SetUrlAndTitle("/sample/shop.fxml", "Магазин");
         });
 
         shop3Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
-
-            loader.setLocation(getClass().getResource("/sample/shop.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            shopController shopC = loader.getController();
-            shopC.setUser(user);
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setTitle("Магазин");
-            stage.setScene(new Scene(root, 1109, 555));
-            stage.show();
+            SetUrlAndTitle("/sample/shop.fxml", "Магазин");
         });
 
         factoryBtn.setOnAction(event -> {
             factoryBtn.getScene().getWindow().hide();
+            SetUrlAndTitle("/sample/factory.fxml", "Завод");
+        });
 
-            loader.setLocation(getClass().getResource("/sample/factory.fxml"));
+        if(url != null){
+            loader.setLocation(getClass().getResource(url));
             try {
                 loader.load();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            factoryController fC = loader.getController();
-            fC.setUser(user);
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setTitle("Завод");
+            controller = loader.getController();
+            controller.setUser(user);
+            consumer.accept(controller);
+            root = loader.getRoot();
+            stage.setTitle(title);
             stage.setScene(new Scene(root, 1109, 555));
             stage.show();
-        });
+        }
+    }
+
+    private void SetUrlAndTitle(String url, String title) {
+        this.url = url;
+        this.title = title;
     }
 
     public void setUser(User user) {
