@@ -6,4 +6,6 @@ import javafx.scene.control.Tab;
 
 public interface EnhancedController {
     public void setUser(User user);
+    public default void hideBackButton(){}
+    public default  void hideUserTab(){}
 }

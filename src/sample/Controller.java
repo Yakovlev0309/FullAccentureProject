@@ -67,8 +67,8 @@ public class Controller {
             Stage stage = new Stage();
             String url = null;
             String title = "";
-            BuildingController controller;
-            Consumer<BuildingController> consumer = (c)->{};
+            EnhancedController controller;
+            Consumer<EnhancedController> consumer = (c)->{};
 //            if (user.getType().equals("worker")) {
 //                consumer = (c)->{c.hideBackButton();c.hideUserTab();};
 //                switch(user.getBuilding().getType()){
