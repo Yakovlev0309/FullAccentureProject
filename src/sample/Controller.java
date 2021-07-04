@@ -14,11 +14,15 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.text.Text;
 
 public class Controller {
 
     @FXML
     private ResourceBundle resources;
+
+    @FXML
+    private Text errorMessage;
 
     @FXML
     private URL location;
@@ -39,6 +43,7 @@ public class Controller {
 
     @FXML
     void initialize() {
+        errorMessage.setVisible(false);
         //Регистрация
             hypertext.setOnAction(event -> {
                  hypertext.getScene().getWindow().hide();
@@ -59,7 +64,7 @@ public class Controller {
             });
         //Вызов general
         SignBtn.setOnAction(event -> {
-            SignBtn.getScene().getWindow().hide();
+
 
             user = Facade.GetUser(logIn.getText(), pass.getText());
             FXMLLoader loader = new FXMLLoader();
@@ -69,34 +74,21 @@ public class Controller {
             String title = "";
             EnhancedController controller;
             Consumer<EnhancedController> consumer = (c)->{};
-//            if (user.getType().equals("worker")) {
-//                consumer = (c)->{c.hideBackButton();c.hideUserTab();};
-//                switch(user.getBuilding().getType()){
-//                    case "factory":
-//                        url = "/sample/factory.fxml";
-//                        title = "Завод";
-//
-//                        break;
-//                    case "storage":
-//                        url = "/sample/storage.fxml";
-//                        title = "Склад";
-//                        break;
-//                    case "store":
-//                        url = "/sample/shop.fxml";
-//                        title = "Магазин";
-//                }
-//            } else if(user.getType().equals("department_director")){
-//                consumer = (c)-> c.hideBackButton();
-//                //TODO заменить, так как работает только с заводом
-//                url = "/sample/factory.fxml";
-//                title = "Главное меню";
-//            }else {
-//                url = "/sample/general.fxml";
-//                title = "Главное меню";
-//            }
+
+            if(user.getType()==null){
+                logIn.setText("");
+                pass.setText("");
+                errorMessage.setVisible(true);
+                return;
+            }
+            SignBtn.getScene().getWindow().hide();
+
             switch (user.getType()) {
-                case "worker":
-                    consumer = (c)->{c.hideBackButton();c.hideUserTab();};
+                case "director":
+                    url = "/sample/general.fxml";
+                    title = "Главное меню";
+                    break;
+                default:
                     switch(user.getBuilding().getType()){
                         case "factory":
                             url = "/sample/factory.fxml";
@@ -110,16 +102,19 @@ public class Controller {
                             url = "/sample/shop.fxml";
                             title = "Магазин";
                     }
-                    break;
-                case "department_director":
-                    consumer = (c)-> c.hideBackButton();
-                    //TODO заменить, так как работает только с заводом
-                    url = "/sample/factory.fxml";
-                    title = "Главное меню";
-                    break;
-                default:
-                    url = "/sample/general.fxml";
-                    title = "Главное меню";
+                    switch (user.getType()) {
+                        case "worker":
+                            consumer = (c) -> {
+                                c.hideBackButton();
+                                c.hideUserTab();
+                            };
+                            break;
+                        case "department_director":
+                            consumer = (c) -> {
+                                c.hideBackButton();
+                            };
+                            break;
+                    }
                     break;
             }
             if(url != null){
@@ -137,7 +132,6 @@ public class Controller {
                 stage.setScene(new Scene(root, 1109, 555));
                 stage.show();
             }
-
         });
     }
 }
