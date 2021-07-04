@@ -14,15 +14,42 @@ public class Buildings extends BaseTable{
         Building building = new Building();
 
         try {
-            result = getDataSQL("SELECT BUILDINGS.ID, BUILDINGS.NAME, BUILDING_TYPES.TYPE_NAME FROM BUILDINGS INNER JOIN BUILDING_TYPES ON BUILDINGS.TYPE_ID=BUILDING_TYPES.ID WHERE BUILDINGS.ID = (SELECT BUILDING_ID FROM USERS WHERE USERNAME = '"+user.getUsername()+"' AND PASSWORD = '"+user.getPassword()+"')");
-            result.next();
+            result = getDataSQL("SELECT * FROM BUILDINGS WHERE ID = (SELECT BUILDING_ID FROM USERS WHERE USERNAME='"+user.getUsername()+"' AND PASSWORD='"+user.getPassword()+"')");
+            building = makeBuilding(result);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return building;
+    }
+    public static Building getBuilding(String name){
+        Building building = new Building();
+        ResultSet result;
+        try {
+            result = getDataSQL("SELECT * FROM BUILDINGS WHERE NAME='"+name+"'");
+            building = makeBuilding(result);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return building;
+    }
+    static Building makeBuilding(ResultSet result){
+        Building building = new Building();
+        try {
+            if(result.isBeforeFirst()){
+                result.next();
+            }
             building.setId(result.getInt("ID"));
-            building.setType(result.getString("TYPE_NAME"));
+            {
+                int typeId = result.getInt("TYPE_ID");
+                ResultSet type = getDataSQL("SELECT * FROM BUILDING_TYPES WHERE ID="+typeId);
+                type.next();
+                building.setType(type.getString("TYPE_NAME"));
+            }
             building.setName(result.getString("NAME"));
             building.setProducts(Products.getProducts(building));
             building.setUsers(Users.getUsers(building));
         } catch (SQLException throwables) {
-            //throwables.printStackTrace();
+            throwables.printStackTrace();
         }
         return building;
     }
