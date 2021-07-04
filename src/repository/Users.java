@@ -77,7 +77,8 @@ public class Users extends BaseTable{
             user.setName(result.getString("NAME"));
             user.setSurname(result.getString("SURNAME"));
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            System.out.println("Пользователь не найден");
+            //throwables.printStackTrace();
         }
         return user;
     }
