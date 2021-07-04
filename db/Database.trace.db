@@ -1133,3 +1133,109 @@ No data is available [2000-197]
 2021-07-04 15:23:15 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Нет данных
 No data is available [2000-197]
+2021-07-04 19:42:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 19:43:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 19:44:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 19:45:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 19:45:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 19:46:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 19:55:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1571)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1547)
+	at org.h2.jdbc.JdbcConnection.createStatement(JdbcConnection.java:262)
+	at com.onseven.dbvis.jdbc.b.d.e(Z:1622)
+	at com.onseven.dbvis.jdbc.b.d.b(Z:3401)
+	at com.onseven.dbvis.jdbc.b.g$_b.call(Z:3572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-07-04 19:55:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1571)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1547)
+	at org.h2.jdbc.JdbcDatabaseMetaData.checkClosed(JdbcDatabaseMetaData.java:3122)
+	at org.h2.jdbc.JdbcDatabaseMetaData.getCatalogs(JdbcDatabaseMetaData.java:877)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.onseven.dbvis.jdbc.b.f.b(Z:1451)
+	at com.onseven.dbvis.jdbc.b.g$_b.call(Z:3572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-07-04 19:55:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1571)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1547)
+	at org.h2.jdbc.JdbcDatabaseMetaData.checkClosed(JdbcDatabaseMetaData.java:3122)
+	at org.h2.jdbc.JdbcDatabaseMetaData.getSchemas(JdbcDatabaseMetaData.java:848)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.onseven.dbvis.jdbc.b.f.b(Z:1451)
+	at com.onseven.dbvis.jdbc.b.g$_b.call(Z:3572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-07-04 19:55:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1571)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1547)
+	at org.h2.jdbc.JdbcDatabaseMetaData.checkClosed(JdbcDatabaseMetaData.java:3122)
+	at org.h2.jdbc.JdbcDatabaseMetaData.getTypeInfo(JdbcDatabaseMetaData.java:1478)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.onseven.dbvis.jdbc.b.f.b(Z:1451)
+	at com.onseven.dbvis.jdbc.b.g$_b.call(Z:3572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-07-04 20:00:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE NEW[*] TABLE TEST (ID INT)"; ожидалось "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, SYNONYM, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE NEW[*] TABLE TEST (ID INT)"; expected "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, SYNONYM, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE NEW TABLE TEST (ID INT) [42001-200]
