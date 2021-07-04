@@ -9,11 +9,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="1109.0" style="-fx-background-color: #B1B5AE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.storageController">
     <children>
-        <TabPane prefHeight="555.0" prefWidth="1109.0" tabClosingPolicy="UNAVAILABLE">
+      <Button fx:id="exitBtn" layoutX="7.0" layoutY="520.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" style="-fx-background-radius: 15;" text="Выход" />
+        <Button fx:id="backBtn" layoutX="519.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />
+        <TabPane prefHeight="519.0" prefWidth="1110.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab fx:id="productTab" text="Товар">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="488.0" prefWidth="1110.0">
                             <children>
                                 <TableView fx:id="productTable" prefHeight="492.0" prefWidth="1109.0">
                                     <columns>
@@ -51,6 +53,5 @@
                 </Tab>
             </tabs>
         </TabPane>
-        <Button fx:id="backBtn" layoutX="518.0" layoutY="492.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" style="-fx-background-radius: 15;" text="Назад" />
     </children>
 </AnchorPane>

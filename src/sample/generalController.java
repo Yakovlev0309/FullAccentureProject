@@ -32,6 +32,9 @@ import javafx.stage.Stage;
         private Button factoryBtn;
 
         @FXML
+        private Button exitBtn;
+
+        @FXML
         private MenuItem shop1Btn;
 
         @FXML
@@ -85,7 +88,22 @@ import javafx.stage.Stage;
             openNewController();
         });
 
-
+        exitBtn.setOnAction(event -> {
+            FXMLLoader loader = new FXMLLoader();
+            Parent root;
+            Stage stage = new Stage();
+            loader.setLocation(getClass().getResource("/sample/sample.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            exitBtn.getScene().getWindow().hide();
+            root = loader.getRoot();
+            stage.setTitle("Авторизация");
+            stage.setScene(new Scene(root, 1109, 555));
+            stage.show();
+        });
     }
 
     private void SetUrlAndTitle(String url, String title) {

@@ -76,6 +76,9 @@ public class shopController extends BuildingController implements EnhancedContro
 //    private User user;
 
     @FXML
+    private Button exitBtn;
+
+    @FXML
     void initialize() {
         backBtn.setOnAction(event -> {
             backBtn.getScene().getWindow().hide();
@@ -95,6 +98,22 @@ public class shopController extends BuildingController implements EnhancedContro
             gC.setUser(user);
             root = loader.getRoot();
             stage.setTitle("Главное меню");
+            stage.setScene(new Scene(root, 1109, 555));
+            stage.show();
+        });
+        exitBtn.setOnAction(event -> {
+            FXMLLoader loader = new FXMLLoader();
+            Parent root;
+            Stage stage = new Stage();
+            loader.setLocation(getClass().getResource("/sample/sample.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            exitBtn.getScene().getWindow().hide();
+            root = loader.getRoot();
+            stage.setTitle("Авторизация");
             stage.setScene(new Scene(root, 1109, 555));
             stage.show();
         });
