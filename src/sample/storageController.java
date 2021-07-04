@@ -89,6 +89,7 @@ public class storageController extends BuildingController implements EnhancedCon
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            backBtn.getScene().getWindow().hide();
             //todo заменить на EnhancedController
             generalController gC = loader.getController();
             gC.setUser(user);

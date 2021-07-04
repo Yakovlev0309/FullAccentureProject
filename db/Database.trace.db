@@ -521,3 +521,9 @@ No data is available [2000-197]
 2021-07-04 13:57:48 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Нет данных
 No data is available [2000-197]
+2021-07-04 14:02:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 14:02:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
