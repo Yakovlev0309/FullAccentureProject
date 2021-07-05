@@ -1181,3 +1181,508 @@ No data is available [2000-197]
 2021-07-04 19:49:46 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Нет данных
 No data is available [2000-197]
+2021-07-04 20:04:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:04:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:05:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:05:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:05:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:05:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:06:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:06:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-04 20:07:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 12:56:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 12:56:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 12:57:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 16:26:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "UPDATE USERS SET USERNAME='storage1worker1' WHERE ID=3
+
+SELECT[*] * FROM USERS"
+Syntax error in SQL statement "UPDATE USERS SET USERNAME='storage1worker1' WHERE ID=3
+
+SELECT[*] * FROM USERS"; SQL statement:
+UPDATE USERS SET USERNAME='storage1worker1' WHERE ID=3
+
+SELECT * FROM USERS [42000-200]
+2021-07-05 16:32:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'.[*] 'Богданов')
+
+SELECT * FROM USERS"; ожидалось "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'.[*] 'Богданов')
+
+SELECT * FROM USERS"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'. 'Богданов')
+
+SELECT * FROM USERS [42001-200]
+2021-07-05 16:32:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'.[*] 'Богданов')"; ожидалось "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'.[*] 'Богданов')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'. 'Богданов') [42001-200]
+2021-07-05 16:32:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'.[*] 'Богданов')"; ожидалось "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'.[*] 'Богданов')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'. 'Богданов') [42001-200]
+2021-07-05 16:33:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'.[*] 'Богданов')"; ожидалось "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'.[*] 'Богданов')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO USERS (BUILDING_ID ,TYPE_ID ,USERNAME ,PASSWORD ,SHIFT_ID ,EFFICIENCY ,NAME ,SURNAME ) VALUES (3, 3, 'store1director', 'director', 1, 0.999, 'Михаил'. 'Богданов') [42001-200]
+2021-07-05 16:47:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * FROM USERS
+
+SELECT[*] * FROM BUILDINGS"
+Syntax error in SQL statement "SELECT * FROM USERS
+
+SELECT[*] * FROM BUILDINGS"; SQL statement:
+SELECT * FROM USERS
+
+SELECT * FROM BUILDINGS [42000-200]
+2021-07-05 17:08:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "RANDOM[*]()"; ожидалось "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"
+Syntax error in SQL statement "RANDOM[*]()"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE"; SQL statement:
+random() [42001-200]
+2021-07-05 17:11:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22 days')[*] + RANDOM()*(INTERVAL '10 hours')"; ожидалось "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, YEAR, MONTH, DAY, HOUR, MINUTE, SECOND"
+Syntax error in SQL statement "SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22 days')[*] + RANDOM()*(INTERVAL '10 hours')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, YEAR, MONTH, DAY, HOUR, MINUTE, SECOND"; SQL statement:
+select timestamp '2021-06-10 10:00:00' + random()*(interval '22 days') + random()*(interval '10 hours') [42001-200]
+2021-07-05 17:15:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "INTERVAL '38.009210535' SECOND"
+Data conversion error converting "INTERVAL '38.009210535' SECOND"; SQL statement:
+select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ round(random()*(interval '60' second),0) [22018-200]
+2021-07-05 17:16:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "INTERVAL '49.764894955' SECOND"
+Data conversion error converting "INTERVAL '49.764894955' SECOND"; SQL statement:
+select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ round(random()*(interval '60' second),1) [22018-200]
+2021-07-05 17:17:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ (ROUND(CAST (RANDOM()*(INTERVAL '60' SECOND) AS INT),0)[*]"; ожидалось "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ (ROUND(CAST (RANDOM()*(INTERVAL '60' SECOND) AS INT),0)[*]"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ (round(cast (random()*(interval '60' second) as int),0) [42001-200]
+2021-07-05 17:17:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT (ROUND(CAST (RANDOM()*(INTERVAL '60' SECOND) AS INT),0)[*]"; ожидалось "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "SELECT (ROUND(CAST (RANDOM()*(INTERVAL '60' SECOND) AS INT),0)[*]"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+select (round(cast (random()*(interval '60' second) as int),0) [42001-200]
+2021-07-05 17:18:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT CAST (RANDOM()*(INTERVAL '60' SECOND) AS INT[*]"; ожидалось "(, FOR, UNSIGNED, )"
+Syntax error in SQL statement "SELECT CAST (RANDOM()*(INTERVAL '60' SECOND) AS INT[*]"; expected "(, FOR, UNSIGNED, )"; SQL statement:
+select cast (random()*(interval '60' second) as int [42001-200]
+2021-07-05 17:20:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT TIMESTAMP INTERVAL[*] '1-6' YEAR TO MONTH"
+Syntax error in SQL statement "SELECT TIMESTAMP INTERVAL[*] '1-6' YEAR TO MONTH"; SQL statement:
+select timestamp INTERVAL '1-6' YEAR TO MONTH [42000-200]
+2021-07-05 17:22:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Неверное количество параметров для функции "RANDOM", ожидаемое количество: "0..1"
+Invalid parameter count for "RANDOM", expected count: "0..1"; SQL statement:
+select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ random(0,60)*(interval '60' second) [7001-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.expression.function.Function.checkParameterCount(Function.java:2560)
+	at org.h2.expression.function.Function.doneWithParameters(Function.java:2573)
+	at org.h2.command.Parser.readFunctionParameters(Parser.java:3966)
+	at org.h2.command.Parser.readFunction(Parser.java:3772)
+	at org.h2.command.Parser.readTerm(Parser.java:4305)
+	at org.h2.command.Parser.readFactor(Parser.java:3343)
+	at org.h2.command.Parser.readSum(Parser.java:3333)
+	at org.h2.command.Parser.readConcat(Parser.java:3305)
+	at org.h2.command.Parser.readCondition(Parser.java:3108)
+	at org.h2.command.Parser.readExpression(Parser.java:3059)
+	at org.h2.command.Parser.parseSelectExpressions(Parser.java:2931)
+	at org.h2.command.Parser.parseSelect(Parser.java:2952)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:2817)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2649)
+	at org.h2.command.Parser.parseQuery(Parser.java:2620)
+	at org.h2.command.Parser.parsePrepared(Parser.java:868)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-07-05 17:23:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "INTERVAL '4.238145834' SECOND"
+Data conversion error converting "INTERVAL '4.238145834' SECOND"; SQL statement:
+select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*(interval '60' second)) [22018-200]
+2021-07-05 17:25:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)([*]INTERVAL '60' SECOND)"
+Syntax error in SQL statement "SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)([*]INTERVAL '60' SECOND)"; SQL statement:
+select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)(interval '60' second) [42000-200]
+2021-07-05 17:33:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT RANDOM() IS >[*]0.7"; ожидалось "NOT, OF, JSON, NULL, DISTINCT, TRUE, FALSE, UNKNOWN"
+Syntax error in SQL statement "SELECT RANDOM() IS >[*]0.7"; expected "NOT, OF, JSON, NULL, DISTINCT, TRUE, FALSE, UNKNOWN"; SQL statement:
+select random() is >0.7 [42001-200]
+2021-07-05 17:34:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT (RANDOM() IS >[*]0.7) AS BOOLEAN"; ожидалось "NOT, OF, JSON, NULL, DISTINCT, TRUE, FALSE, UNKNOWN"
+Syntax error in SQL statement "SELECT (RANDOM() IS >[*]0.7) AS BOOLEAN"; expected "NOT, OF, JSON, NULL, DISTINCT, TRUE, FALSE, UNKNOWN"; SQL statement:
+select (random() is >0.7) as boolean [42001-200]
+2021-07-05 17:35:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Неверное количество столбцов
+Column count does not match; SQL statement:
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second), false) [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-07-05 17:41:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * FROM PRODUCTS
+
+SELECT[*] * FROM USERS
+
+SELECT * FROM BUILDINGS
+
+SELECT TIMESTAMP '2021-06-10 20:00:00' +
+       RANDOM() * (TIMESTAMP '2021-07-02 20:00:00' -
+                   TIMESTAMP '2021-06-10 10:00:00')
+SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)
+SELECT FLOOR(RANDOM()*60)/60
+SELECT (RANDOM() IS >0.7) AS BOOLEAN
+
+SELECT * FROM PRODUCTS
+
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)"
+Syntax error in SQL statement "SELECT * FROM PRODUCTS
+
+SELECT[*] * FROM USERS
+
+SELECT * FROM BUILDINGS
+
+SELECT TIMESTAMP '2021-06-10 20:00:00' +
+       RANDOM() * (TIMESTAMP '2021-07-02 20:00:00' -
+                   TIMESTAMP '2021-06-10 10:00:00')
+SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)
+SELECT FLOOR(RANDOM()*60)/60
+SELECT (RANDOM() IS >0.7) AS BOOLEAN
+
+SELECT * FROM PRODUCTS
+
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (SELECT TIMESTAMP '2021-06-10 10:00:00' + RANDOM()*(INTERVAL '22' DAY) + RANDOM()*(INTERVAL '10' HOUR)+ RANDOM()*(INTERVAL '60' MINUTE)+ FLOOR(RANDOM()*60)/60*(INTERVAL '60' SECOND)), FALSE)"; SQL statement:
+SELECT * FROM PRODUCTS
+
+SELECT * FROM USERS
+
+SELECT * FROM BUILDINGS
+
+select timestamp '2021-06-10 20:00:00' +
+       random() * (timestamp '2021-07-02 20:00:00' -
+                   timestamp '2021-06-10 10:00:00')
+select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)
+select floor(random()*60)/60
+select (random() is >0.7) as boolean
+
+SELECT * FROM PRODUCTS
+
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)), false)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)), false)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)), false)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)), false)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)), false)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)), false)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)), false)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)), false)
+INSERT INTO PRODUCTS (BUILDING_ID ,USER_ID ,SHIFT_ID ,PRODUCT_TYPE ,PRICE ,DATEANDTIME ,IS_DEFECT) VALUES (1, 2, 1, 'product', 45.5, (select timestamp '2021-06-10 10:00:00' + random()*(interval '22' day) + random()*(interval '10' hour)+ random()*(interval '60' minute)+ floor(random()*60)/60*(interval '60' second)), false) [42000-200]
+2021-07-05 18:19:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:19:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:20:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:20:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:24:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:24:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:24:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:25:30 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:307)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2506)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:383)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:364)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2934)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2538)
+	at org.h2.engine.Database.open(Database.java:709)
+	at org.h2.engine.Database.openDatabase(Database.java:286)
+	at org.h2.engine.Database.<init>(Database.java:280)
+	at org.h2.engine.Engine.openSession(Engine.java:66)
+	at org.h2.engine.Engine.openSession(Engine.java:179)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:157)
+	at org.h2.engine.Engine.createSession(Engine.java:140)
+	at org.h2.engine.Engine.createSession(Engine.java:28)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:351)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:103)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:251)
+	at repository.Database.getConnection(Database.java:22)
+	at repository.BaseTable.reopenConnection(BaseTable.java:15)
+	at repository.BaseTable.getDataSQL(BaseTable.java:38)
+	at repository.Users.getUser(Users.java:18)
+	at sample.Facade.GetUser(Facade.java:13)
+	at sample.Controller.lambda$initialize$4(Controller.java:69)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8879)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:200)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:206)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3851)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.access$1200(Scene.java:3579)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1849)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2588)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:397)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:434)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:390)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:433)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:556)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:942)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	... 76 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:870)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:350)
+	... 70 more
+2021-07-05 18:25:55 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:307)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2506)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:383)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:364)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2934)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2538)
+	at org.h2.engine.Database.open(Database.java:709)
+	at org.h2.engine.Database.openDatabase(Database.java:286)
+	at org.h2.engine.Database.<init>(Database.java:280)
+	at org.h2.engine.Engine.openSession(Engine.java:66)
+	at org.h2.engine.Engine.openSession(Engine.java:179)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:157)
+	at org.h2.engine.Engine.createSession(Engine.java:140)
+	at org.h2.engine.Engine.createSession(Engine.java:28)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:351)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:103)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:251)
+	at repository.Database.getConnection(Database.java:22)
+	at repository.BaseTable.reopenConnection(BaseTable.java:15)
+	at repository.BaseTable.getDataSQL(BaseTable.java:38)
+	at repository.Users.getUser(Users.java:18)
+	at sample.Facade.GetUser(Facade.java:13)
+	at sample.Controller.lambda$initialize$4(Controller.java:69)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8879)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:200)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:206)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3851)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.access$1200(Scene.java:3579)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1849)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2588)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:397)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:434)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:390)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:433)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:556)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:942)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	... 76 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/Oleg/IntelliJIDEAProjects/FullAccentureProject/db/Database.mv.db [1.4.197/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:870)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:350)
+	... 70 more
+2021-07-05 18:26:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:27:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:44:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
+2021-07-05 18:44:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-197]
