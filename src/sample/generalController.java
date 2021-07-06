@@ -20,6 +20,9 @@ import javafx.stage.Stage;
         private ResourceBundle resources;
 
         @FXML
+        private Button signUpBtn;
+
+        @FXML
         private URL location;
 
         @FXML
@@ -103,6 +106,29 @@ import javafx.stage.Stage;
             stage.setTitle("Авторизация");
             stage.setScene(new Scene(root, 1109, 555));
             stage.show();
+        });
+
+        signUpBtn.setOnAction(event -> {
+            signUpBtn.getScene().getWindow().hide();
+            SetUrlAndTitle("/sample/signIn.fxml", "Регистрация пользователя");
+            FXMLLoader loader = new FXMLLoader();
+            Parent root;
+            Stage stage = new Stage();
+            signInController controller;
+            if(url != null){
+                loader.setLocation(getClass().getResource(url));
+                try {
+                    loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                controller = loader.getController();
+                controller.setUser(user);
+                root = loader.getRoot();
+                stage.setTitle(title);
+                stage.setScene(new Scene(root, 1109, 555));
+                stage.show();
+            }
         });
     }
 

@@ -39,8 +39,6 @@
                   <Image url="@assets/password_30px.png" />
                </image>
             </ImageView>
-            <Hyperlink fx:id="hypertext" layoutX="203.0" layoutY="355.0" text="Зарегистрироваться" />
-            <Text fill="#686464" layoutX="38.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Еще не зарегистрированы?  - " />
             <Text fx:id="errorMessage" fill="RED" layoutX="102.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный логин или пароль!" />
          </children>
       </AnchorPane>

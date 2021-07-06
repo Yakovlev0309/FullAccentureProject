@@ -45,24 +45,6 @@ public class Controller {
     @FXML
     void initialize() {
         errorMessage.setVisible(false);
-        //Регистрация
-            hypertext.setOnAction(event -> {
-                 hypertext.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/sample/signIn.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-            });
 
         logIn.setOnKeyPressed(event -> {
             if(event.getCode() == KeyCode.ENTER){SignBtn.fire();}

@@ -24,5 +24,6 @@
       <Button fx:id="storageBtn" layoutX="431.0" layoutY="208.0" mnemonicParsing="false" prefHeight="139.0" prefWidth="248.0" style="-fx-background-radius: 15;" text="Склад" />
       <Button fx:id="factoryBtn" layoutX="766.0" layoutY="208.0" mnemonicParsing="false" prefHeight="139.0" prefWidth="248.0" style="-fx-background-radius: 15;" text="Завод" />
       <Button fx:id="exitBtn" layoutX="7.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Выход" />
+      <Button fx:id="signUpBtn" layoutX="907.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="202.0" style="-fx-background-radius: 15;" text="Зарегистрировать пользователя" />
    </children>
 </AnchorPane>
