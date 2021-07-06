@@ -78,8 +78,31 @@ public class storageController extends BuildingController implements EnhancedCon
     @FXML
     private Button exitBtn;
 
+    ObservableList<Product> products = FXCollections.observableArrayList();
+    ObservableList<User> users = FXCollections.observableArrayList();
+
     @FXML
     void initialize() {
+
+        idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
+        ptypeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
+        priceClmn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
+        defectClmn.setCellValueFactory(new PropertyValueFactory<Product, Boolean>("isDefect"));
+        pShiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
+        pNameClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
+        dateClmn.setCellValueFactory(new PropertyValueFactory<Product, Timestamp>("dateAndTime"));
+
+        nameClmn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        surnameClmn.setCellValueFactory(new PropertyValueFactory<>("surname"));
+        typeClmn.setCellValueFactory(new PropertyValueFactory<>("type"));
+        usernameClmn.setCellValueFactory(new PropertyValueFactory<>("username"));
+        passwordClmn.setCellValueFactory(new PropertyValueFactory<>("password"));
+        shiftClmn.setCellValueFactory(new PropertyValueFactory<>("shift"));
+        efficiencyClmn.setCellValueFactory(new PropertyValueFactory<>("efficiency"));
+
+        productTable.setItems(products);
+        userTable.setItems(users);
+
         backBtn.setOnAction(event -> {
             backBtn.getScene().getWindow().hide();
 
@@ -120,30 +143,7 @@ public class storageController extends BuildingController implements EnhancedCon
     }
 
     public void updateTable(){
-        ObservableList<Product> products = FXCollections.observableArrayList();
-        ObservableList<User> users = FXCollections.observableArrayList();
-
-        products.addAll(user.getBuilding().getProducts());
-        users.addAll(user.getBuilding().getUsers());
-
-        idClmn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));// имя переменной класса Product
-        ptypeClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("type"));
-        priceClmn.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
-        defectClmn.setCellValueFactory(new PropertyValueFactory<Product, Boolean>("isDefect"));
-        pShiftClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("shift"));
-        pNameClmn.setCellValueFactory(new PropertyValueFactory<Product, String>("user"));
-        dateClmn.setCellValueFactory(new PropertyValueFactory<Product, Timestamp>("dateAndTime"));
-
-        nameClmn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        surnameClmn.setCellValueFactory(new PropertyValueFactory<>("surname"));
-        typeClmn.setCellValueFactory(new PropertyValueFactory<>("type"));
-        usernameClmn.setCellValueFactory(new PropertyValueFactory<>("username"));
-        passwordClmn.setCellValueFactory(new PropertyValueFactory<>("password"));
-        shiftClmn.setCellValueFactory(new PropertyValueFactory<>("shift"));
-        efficiencyClmn.setCellValueFactory(new PropertyValueFactory<>("efficiency"));
-
-        productTable.setItems(products);
-        userTable.setItems(users);
+        products.setAll(user.getBuilding().getProducts());
+        users.setAll(user.getBuilding().getUsers());
     }
-
 }

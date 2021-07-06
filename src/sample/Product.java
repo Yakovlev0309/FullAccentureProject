@@ -53,7 +53,7 @@ public class Product {
         return type;
     }
 
-    public double getPrice() {
+    public static double getPrice() {
         return price;
     }
 

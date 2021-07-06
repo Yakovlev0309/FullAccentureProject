@@ -6,7 +6,9 @@ import sample.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Products extends BaseTable{
     public static ArrayList<Product> getProducts (Building building){
@@ -16,19 +18,7 @@ public class Products extends BaseTable{
         try {
             products = getDataSQL("SELECT * FROM PRODUCTS WHERE BUILDING_ID = (SELECT ID FROM BUILDINGS WHERE NAME = '"+building.getName()+"')");
             while (products.next()){
-                product = new Product();
-                product.setId(products.getInt("ID"));
-                product.setBuilding(building);
-                {
-                    int shiftId = products.getInt("SHIFT_ID");
-                    ResultSet shift = getDataSQL("SELECT * FROM SHIFTS WHERE ID = " + shiftId);
-                    shift.next();
-                    product.setShift(shift.getString("SHIFT_NAME"));
-                }
-                product.setDateAndTime(products.getTimestamp("DATEANDTIME"));
-                product.setIsDefect(products.getBoolean("IS_DEFECT"));
-                product.setUser(Users.getUser(product));
-                list.add(product);
+                list.add(makeProduct(products, building));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -42,14 +32,58 @@ public class Products extends BaseTable{
             throwables.printStackTrace();
         }
     }
-    public static Product createNewProduct(Building building, User user, int count){
+    public static Product createNewProduct(Building building, User user){
         ResultSet result;
         Product product = new Product();
         try {
-            //TODO изменить команду, т.к. у продукта стало больше полей
-            modifyDatabase("INSERT INTO PRODUCTS (BUILDING_ID) VALUES("+building.getId()+")");
+            int userId;
+            {
+                ResultSet currentUser = getDataSQL("SELECT ID FROM USERS WHERE USERNAME='" + user.getUsername() + "' AND PASSWORD='" + user.getPassword() + "'");
+                currentUser.next();
+                userId = currentUser.getInt("ID");
+            }
+            int shiftId;
+            {
+                ResultSet shift = getDataSQL("SELECT ID FROM SHIFTS WHERE SHIFT_NAME='"+user.getShift()+"'");
+                shift.next();
+                shiftId = shift.getInt("ID");
+            }
+            Random rnd = new Random();
+            String sql = "INSERT INTO PRODUCTS (BUILDING_ID, USER_ID, SHIFT_ID, PRODUCT_TYPE, PRICE, DATEANDTIME, IS_DEFECT) " +
+                    "VALUES (" +
+                     building.getId() + ", " +
+                     userId + ", " +
+                     shiftId + ", " +
+                     "'" + Product.getType() + "'" + ", " +
+                     Product.getPrice() + ", " +
+                     "NOW(), " +
+                    (rnd.nextDouble() <= user.getEfficiency()?"false":"true")+")";
+            modifyDatabase(sql);
             result = getDataSQL("SELECT * FROM PRODUCTS ORDER BY ID DESC LIMIT 1");
+            product = makeProduct(result, building);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return product;
+    }
+    static Product makeProduct(ResultSet result, Building building){
+        Product product = new Product();
+        try {
+            if(result.isBeforeFirst()){
+                result.next();
+            }
+            product = new Product();
             product.setId(result.getInt("ID"));
+            product.setBuilding(building);
+            {
+                int shiftId = result.getInt("SHIFT_ID");
+                ResultSet shift = getDataSQL("SELECT * FROM SHIFTS WHERE ID = " + shiftId);
+                shift.next();
+                product.setShift(shift.getString("SHIFT_NAME"));
+            }
+            product.setDateAndTime(result.getTimestamp("DATEANDTIME"));
+            product.setIsDefect(result.getBoolean("IS_DEFECT"));
+            product.setUser(Users.getUser(product));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

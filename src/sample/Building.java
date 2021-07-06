@@ -15,6 +15,7 @@ public class Building {
         products = new ArrayList<>();
     }
 
+    //region Сеттеры и геттеры {...}
     public ArrayList<Product> getProducts() {
         return products;
     }
@@ -54,6 +55,7 @@ public class Building {
     public void setName(String name) {
         this.name = name;
     }
+    //endregion
 
     public int CountOfProducts() {
         return products.size();
@@ -71,7 +73,10 @@ public class Building {
             products.remove(0);
         }
     }
-
+    public void deleteProduct(Product product){
+        product.deleteProduct();
+        products.remove(product);
+    }
     @Override
     public String toString(){
         return name;
