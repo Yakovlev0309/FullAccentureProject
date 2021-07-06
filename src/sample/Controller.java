@@ -98,18 +98,16 @@ public class Controller {
                     title = "Главное меню";
                     break;
                 default:
+                    title = user.getBuilding().getName();
                     switch(user.getBuilding().getType()){
                         case "factory":
                             url = "/sample/factory.fxml";
-                            title = "Завод";
                             break;
                         case "storage":
                             url = "/sample/storage.fxml";
-                            title = "Склад";
                             break;
                         case "store":
                             url = "/sample/shop.fxml";
-                            title = "Магазин";
                     }
                     switch (user.getType()) {
                         case "worker":

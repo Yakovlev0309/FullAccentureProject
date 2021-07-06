@@ -53,14 +53,14 @@ import javafx.stage.Stage;
     void initialize() {
         storageBtn.setOnAction(event -> {
             storageBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/storage.fxml", "Склад");
+            SetUrlAndTitle("/sample/storage.fxml", "Склад №1");
             building_name = "storage1";
             openNewController();
         });
 
         shop1Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/shop.fxml", "Магазин");
+            SetUrlAndTitle("/sample/shop.fxml", "Магазин №1");
             building_name = "store1";
             openNewController();
 
@@ -68,7 +68,7 @@ import javafx.stage.Stage;
 
         shop2Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/shop.fxml", "Магазин");
+            SetUrlAndTitle("/sample/shop.fxml", "Магазин №2");
             building_name = "store2";
             openNewController();
 
@@ -76,14 +76,14 @@ import javafx.stage.Stage;
 
         shop3Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/shop.fxml", "Магазин");
+            SetUrlAndTitle("/sample/shop.fxml", "Магазин №3");
             building_name = "store3";
             openNewController();
         });
 
         factoryBtn.setOnAction(event -> {
             factoryBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/factory.fxml", "Завод");
+            SetUrlAndTitle("/sample/factory.fxml", "Завод №1");
             building_name = "factory1";
             openNewController();
         });
