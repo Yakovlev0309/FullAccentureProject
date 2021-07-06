@@ -153,7 +153,7 @@ public class factoryController extends BuildingController implements EnhancedCon
             TableView.TableViewSelectionModel<Product> model = productTable.getSelectionModel();
             Product product = model.getSelectedItem();
             Building building = buildingsComboBox.getValue();
-            if(product != null){
+            if(product != null && building != null){
                 user.getBuilding().sendTo(building, product);
             }
             updateTable();
