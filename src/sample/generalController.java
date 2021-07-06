@@ -53,38 +53,38 @@ import javafx.stage.Stage;
     void initialize() {
         storageBtn.setOnAction(event -> {
             storageBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/storage.fxml", "Склад №1");
-            building_name = "storage1";
+            building_name = "Склад №1";
+            SetUrlAndTitle("/sample/storage.fxml", building_name);
             openNewController();
         });
 
         shop1Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/shop.fxml", "Магазин №1");
-            building_name = "store1";
+            building_name = "Магазин №1";
+            SetUrlAndTitle("/sample/shop.fxml", building_name);
             openNewController();
 
         });
 
         shop2Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/shop.fxml", "Магазин №2");
-            building_name = "store2";
+            building_name = "Магазин №2";
+            SetUrlAndTitle("/sample/shop.fxml", building_name);
             openNewController();
 
         });
 
         shop3Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/shop.fxml", "Магазин №3");
-            building_name = "store3";
+            building_name = "Магазин №3";
+            SetUrlAndTitle("/sample/shop.fxml", building_name);
             openNewController();
         });
 
         factoryBtn.setOnAction(event -> {
             factoryBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/factory.fxml", "Завод №1");
-            building_name = "factory1";
+            building_name = "Завод №1";
+            SetUrlAndTitle("/sample/factory.fxml", building_name);
             openNewController();
         });
 
@@ -114,7 +114,8 @@ import javafx.stage.Stage;
         FXMLLoader loader = new FXMLLoader();
         Parent root;
         Stage stage = new Stage();
-        BuildingController controller;
+        EnhancedController controller;
+        Consumer<EnhancedController> consumer = (c) -> c.hideActionButton();
         if(url != null){
             loader.setLocation(getClass().getResource(url));
             try {
@@ -123,6 +124,7 @@ import javafx.stage.Stage;
                 e.printStackTrace();
             }
             controller = loader.getController();
+            consumer.accept(controller);
             user.setBuilding(Facade.getBuildingByName(building_name));
             controller.setUser(user);
             root = loader.getRoot();
