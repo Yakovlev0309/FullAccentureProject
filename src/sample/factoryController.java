@@ -105,7 +105,7 @@ public class factoryController extends BuildingController implements EnhancedCon
         productTable.setItems(products);
         userTable.setItems(users);
 
-        buildings.setAll(Buildings.getBuildings(null));
+        buildings.setAll(Buildings.getBuildings("storage"));
         buildingsComboBox.setItems(buildings);
 
         backBtn.setOnAction(event -> {

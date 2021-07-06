@@ -62,7 +62,7 @@ public class Buildings extends BaseTable{
             if(type != null){
                 int typeId;
                 {
-                    ResultSet types = getDataSQL("SELECT ID FROM BUILDING_TYPES WHERE NAME=" + type);
+                    ResultSet types = getDataSQL("SELECT ID FROM BUILDING_TYPES WHERE TYPE_NAME='" + type + "'");
                     types.next();
                     typeId = types.getInt("ID");
                 }
