@@ -84,7 +84,7 @@ public class Product {
         Products.deleteProduct(this);
     }
 
-    public void SetNewLocation(Building building) {
+    public void setNewLocation(Building building) {
         Products.changeLocation(this, building);
     }
 }

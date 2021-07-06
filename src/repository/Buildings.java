@@ -1,5 +1,6 @@
 package repository;
 
+import org.jetbrains.annotations.Nullable;
 import sample.Building;
 import sample.User;
 
@@ -52,6 +53,31 @@ public class Buildings extends BaseTable{
             //throwables.printStackTrace();
         }
         return building;
+    }
+    public static ArrayList<Building> getBuildings (@Nullable String type){
+        ArrayList<Building> list = new ArrayList<>();
+        String sql = "";
+        ResultSet buildings;
+        try {
+            if(type != null){
+                int typeId;
+                {
+                    ResultSet types = getDataSQL("SELECT ID FROM BUILDING_TYPES WHERE NAME=" + type);
+                    types.next();
+                    typeId = types.getInt("ID");
+                }
+                sql = "SELECT * FROM BUILDINGS WHERE TYPE_ID=" + typeId;
+            }else {
+                sql = "SELECT * FROM BUILDINGS";
+            }
+            buildings = getDataSQL(sql);
+            while (buildings.next()){
+                list.add(makeBuilding(buildings));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return list;
     }
 //    public static ArrayList<Building> getAllBuildings(User user){
 //

@@ -3,6 +3,7 @@ package sample;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -11,12 +12,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import repository.Buildings;
 
 public class factoryController extends BuildingController implements EnhancedController {
 
@@ -73,12 +72,16 @@ public class factoryController extends BuildingController implements EnhancedCon
     //endregion
 
 //    private User user;
+    @FXML
+    private Button sendBtn;
 
     @FXML
     private Button exitBtn;
 
     ObservableList<Product> products = FXCollections.observableArrayList();
     ObservableList<User> users = FXCollections.observableArrayList();
+
+    ObservableList<Building> buildings = FXCollections.observableArrayList();
 
     @FXML
     void initialize() {
@@ -101,6 +104,9 @@ public class factoryController extends BuildingController implements EnhancedCon
 
         productTable.setItems(products);
         userTable.setItems(users);
+
+        buildings.setAll(Buildings.getBuildings(null));
+        buildingsComboBox.setItems(buildings);
 
         backBtn.setOnAction(event -> {
 
@@ -140,6 +146,16 @@ public class factoryController extends BuildingController implements EnhancedCon
         });
         actionBtn.setOnAction(event -> {
             Facade.makeNewProduct(user.getBuilding(), user);
+            updateTable();
+        });
+
+        sendBtn.setOnAction(event -> {
+            TableView.TableViewSelectionModel<Product> model = productTable.getSelectionModel();
+            Product product = model.getSelectedItem();
+            Building building = buildingsComboBox.getValue();
+            if(product != null){
+                user.getBuilding().sendTo(building, product);
+            }
             updateTable();
         });
     }

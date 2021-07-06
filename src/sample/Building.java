@@ -66,12 +66,10 @@ public class Building {
     }
     //public void removeProduct(){products.remove(0);}
 
-    public void sendTo(Building building, int count){
-        for(int i = 0; i < count; i++){
-            building.addProduct(products.get(0));
-            products.get(0).SetNewLocation(building);
-            products.remove(0);
-        }
+    public void sendTo(Building building, Product product){
+        products.remove(product);
+        product.setNewLocation(building);
+        building.products.add(product);
     }
     public void deleteProduct(Product product){
         product.deleteProduct();

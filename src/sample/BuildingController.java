@@ -2,10 +2,15 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 
 public abstract class BuildingController {
+
+    @FXML
+    ComboBox<Building> buildingsComboBox;
+
     @FXML
     Button backBtn;
 
