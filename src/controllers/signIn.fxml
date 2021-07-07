@@ -18,22 +18,23 @@
                 <Image url="@assets/1613713767_67-p-razmitii-fon-dlya-prezentatsii-84.jpg" />
             </image>
         </ImageView>
-        <AnchorPane layoutX="373.0" layoutY="69.0" prefHeight="417.0" prefWidth="362.0" style="-fx-background-color: #B1B5AE; -fx-background-radius: 15;">
+        <AnchorPane layoutX="373.0" layoutY="48.0" prefHeight="460.0" prefWidth="362.0" style="-fx-background-color: #B1B5AE; -fx-background-radius: 15;">
             <children>
-                <Label layoutX="100.0" layoutY="20.0" text="Регистрация" textFill="WHITE">
+                <Label layoutX="102.0" layoutY="20.0" text="Регистрация" textFill="WHITE">
                     <font>
                         <Font name="Tahoma Bold" size="24.0" />
                     </font>
                 </Label>
-                <AnchorPane layoutX="82.0" layoutY="57.0" prefHeight="7.0" prefWidth="200.0" style="-fx-background-color: #7ACC4A;" />
-                <TextField fx:id="loginField" layoutX="83.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" promptText="Логин" />
-                <PasswordField fx:id="passwordField" layoutX="83.0" layoutY="223.0" prefHeight="30.0" prefWidth="200.0" promptText="Пароль" />
-                <Button fx:id="signUpBtn" layoutX="117.0" layoutY="367.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="133.0" style="-fx-background-color: #7ACC4A; -fx-background-radius: 90;" text="Зарегистрировать" />
-            <TextField fx:id="nameField" layoutX="83.0" layoutY="83.0" prefHeight="30.0" prefWidth="200.0" promptText="Имя" />
-            <TextField fx:id="surnameField" layoutX="83.0" layoutY="130.0" prefHeight="30.0" prefWidth="200.0" promptText="Фамилия" />
-            <ComboBox fx:id="buildingField" layoutX="84.0" layoutY="267.0" prefHeight="25.0" prefWidth="200.0" promptText="Подразделение" />
-            <ComboBox fx:id="shiftField" layoutX="85.0" layoutY="305.0" prefHeight="25.0" prefWidth="200.0" promptText="Смена" />
-            <Text fx:id="errorMessage" fill="RED" layoutX="117.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Не все поля заполнены!" />
+                <AnchorPane layoutX="81.0" layoutY="57.0" prefHeight="7.0" prefWidth="200.0" style="-fx-background-color: #7ACC4A;" />
+                <TextField fx:id="loginField" layoutX="81.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" promptText="Логин" />
+                <PasswordField fx:id="passwordField" layoutX="81.0" layoutY="221.0" prefHeight="30.0" prefWidth="200.0" promptText="Пароль" />
+            <TextField fx:id="nameField" layoutX="81.0" layoutY="83.0" prefHeight="30.0" prefWidth="200.0" promptText="Имя" />
+            <TextField fx:id="surnameField" layoutX="81.0" layoutY="129.0" prefHeight="30.0" prefWidth="200.0" promptText="Фамилия" />
+            <ComboBox fx:id="buildingField" layoutX="81.0" layoutY="267.0" prefHeight="25.0" prefWidth="200.0" promptText="Подразделение" />
+            <ComboBox fx:id="shiftField" layoutX="81.0" layoutY="308.0" prefHeight="25.0" prefWidth="200.0" promptText="Смена" />
+            <Text fx:id="errorMessage" fill="RED" layoutX="115.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Не все поля заполнены!" />
+                <Button fx:id="signUpBtn" layoutX="114.0" layoutY="404.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="133.0" style="-fx-background-color: #7ACC4A; -fx-background-radius: 90;" text="Зарегистрировать" />
+            <ComboBox fx:id="statusField" layoutX="81.0" layoutY="349.0" prefHeight="25.0" prefWidth="200.0" promptText="Статус" />
             </children>
         </AnchorPane>
         <Button fx:id="backBtn" layoutX="7.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />

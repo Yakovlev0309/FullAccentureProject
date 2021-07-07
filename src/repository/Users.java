@@ -48,6 +48,40 @@ public class Users extends BaseTable{
         }
         return user;
     }
+    public  static void createNewUser(User user){
+        try {
+            int buildingId;
+            {
+                ResultSet building = getDataSQL("SELECT ID FROM BUILDINGS WHERE NAME ='" + user.getBuilding().getName() + "'");
+                building.next();
+                buildingId = building.getInt("ID");
+            }
+            int typeId;
+            {
+                ResultSet type = getDataSQL("SELECT ID FROM USER_TYPES WHERE TYPE_NAME = '" + user.getType() + "'");
+                type.next();
+                typeId = type.getInt("ID");
+            }
+            int shiftId;
+            {
+                ResultSet shift = getDataSQL("SELECT ID FROM SHIFTS WHERE SHIFT_NAME = '" + user.getShift() + "'");
+                shift.next();
+                shiftId = shift.getInt("ID");
+            }
+            modifyDatabase("INSERT INTO USERS (BUILDING_ID, TYPE_ID, USERNAME, PASSWORD, SHIFT_ID, EFFICIENCY, NAME, SURNAME) " +
+                    "VALUES (" +
+                    buildingId + ", " +
+                    typeId + ", " +
+                    "'" + user.getUsername() + "', " +
+                    "'" + user.getPassword() + "', " +
+                    shiftId + ", " +
+                    user.getEfficiency() + ", " +
+                    "'" + user.getName() + "', " +
+                    "'" + user.getSurname() + "')");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
     static User makeUser(ResultSet result, @Nullable Building building){
         User user = new User();
         try {

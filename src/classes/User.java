@@ -4,6 +4,7 @@ import repository.Database;
 import repository.Users;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class User {
     private String username;
@@ -16,6 +17,25 @@ public class User {
     private String surname;
 
     public User(){}
+
+    public  User(Building building, String type, String username, String password, Integer shiftId, String name, String surname){
+        this.building = building;
+        this.type = type;
+        this.username = username;
+        this.password = password;
+        switch (shiftId){
+            case 1:
+                shift = "1-ая";
+                break;
+            case  2:
+                shift = "2-ая";
+                break;
+        }
+        this.name = name;
+        this.surname = surname;
+        Random rnd = new Random();
+        efficiency = Math.round(rnd.nextDouble() * 0.099 * 1000) / 1000  + 0.9;
+    }
 
     //region Геттеры и сеттеры {...}
     public String getUsername() {
@@ -82,6 +102,8 @@ public class User {
         this.surname = surname;
     }
     //endregion
+
+    public void createNewUser(){Users.createNewUser(this);}
 
     @Override
     public String toString(){
