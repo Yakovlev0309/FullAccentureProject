@@ -5,6 +5,7 @@ import java.net.URL;
 import java.sql.Timestamp;
 import java.util.ResourceBundle;
 
+import classes.Building;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import classes.Product;
 import classes.User;
+import repository.Buildings;
 
 public class storageController extends BuildingController implements EnhancedController{
 
@@ -83,6 +85,8 @@ public class storageController extends BuildingController implements EnhancedCon
     ObservableList<Product> products = FXCollections.observableArrayList();
     ObservableList<User> users = FXCollections.observableArrayList();
 
+    ObservableList<Building> buildings = FXCollections.observableArrayList();
+
     @FXML
     void initialize() {
 
@@ -104,6 +108,9 @@ public class storageController extends BuildingController implements EnhancedCon
 
         productTable.setItems(products);
         userTable.setItems(users);
+
+        buildings.setAll(Buildings.getBuildings("store"));
+        buildingsComboBox.setItems(buildings);
 
         backBtn.setOnAction(event -> {
             backBtn.getScene().getWindow().hide();
@@ -141,6 +148,16 @@ public class storageController extends BuildingController implements EnhancedCon
             stage.setTitle("Авторизация");
             stage.setScene(new Scene(root, 1109, 555));
             stage.show();
+        });
+
+        sendBtn.setOnAction(event -> {
+            TableView.TableViewSelectionModel<Product> model = productTable.getSelectionModel();
+            Product product = model.getSelectedItem();
+            Building building = buildingsComboBox.getValue();
+            if(product != null && building != null){
+                user.getBuilding().sendTo(building, product);
+            }
+            updateTable();
         });
     }
 

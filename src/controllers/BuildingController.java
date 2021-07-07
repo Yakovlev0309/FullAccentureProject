@@ -20,6 +20,9 @@ public abstract class BuildingController {
     Button actionBtn;
 
     @FXML
+    Button sendBtn;
+
+    @FXML
     Tab userTab;
 
     @FXML
@@ -40,4 +43,8 @@ public abstract class BuildingController {
         userTab.setDisable(true);
     }
     public void hideActionButton(){actionBtn.setVisible(false);}
+    public void hideSendChoice(){
+        sendBtn.setVisible(false);
+        buildingsComboBox.setVisible(false);
+    }
 }

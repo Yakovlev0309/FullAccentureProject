@@ -143,7 +143,10 @@ public class generalController implements EnhancedController {
         Parent root;
         Stage stage = new Stage();
         EnhancedController controller;
-        Consumer<EnhancedController> consumer = (c) -> c.hideActionButton();
+        Consumer<EnhancedController> consumer = (c) -> {
+            c.hideActionButton();
+            c.hideSendChoice();
+        };
         if(url != null){
             loader.setLocation(getClass().getResource(url));
             try {

@@ -75,8 +75,7 @@ public class factoryController extends BuildingController implements EnhancedCon
     //endregion
 
 //    private User user;
-    @FXML
-    private Button sendBtn;
+
 
     @FXML
     private Button exitBtn;

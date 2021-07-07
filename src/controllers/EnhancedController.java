@@ -7,4 +7,5 @@ public interface EnhancedController {
     public default void hideBackButton(){}
     public default  void hideUserTab(){}
     public default void hideActionButton(){}
+    public default void hideSendChoice(){}
 }

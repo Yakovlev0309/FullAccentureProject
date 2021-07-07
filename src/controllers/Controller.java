@@ -89,21 +89,23 @@ public class Controller {
                             break;
                         case "storage":
                             url = "/controllers/storage.fxml";
+                            consumer = (c) -> c.hideActionButton();
                             break;
                         case "store":
                             url = "/controllers/shop.fxml";
+                            consumer = (c) -> c.hideSendChoice();
                     }
                     switch (user.getType()) {
                         case "worker":
-                            consumer = (c) -> {
+                            consumer = consumer.andThen((c) -> {
                                 c.hideBackButton();
                                 c.hideUserTab();
-                            };
+                            });
                             break;
                         case "department_director":
-                            consumer = (c) -> {
+                            consumer = consumer.andThen((c) -> {
                                 c.hideBackButton();
-                            };
+                            });
                             break;
                     }
                     break;
