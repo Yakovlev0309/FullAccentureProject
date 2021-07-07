@@ -30,7 +30,7 @@ public abstract class BuildingController {
     public abstract void updateTable();
     public void setUser(User user){
         this.user = user;
-        userLabel.textProperty().set(user.toString());
+        userLabel.textProperty().set("Вход выполнен:\n"+user.toString());
         updateTable();
     }
     public void hideBackButton(){

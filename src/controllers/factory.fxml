@@ -56,7 +56,7 @@
             </tabs>
         </TabPane>
       <Button fx:id="actionBtn" layoutX="493.0" layoutY="519.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" style="-fx-background-radius: 15;" text="Произвести товар" />
-      <Label fx:id="userLabel" layoutX="986.0" layoutY="519.0" prefHeight="20.0" prefWidth="124.0" text="Label" />
+      <Label fx:id="userLabel" layoutX="986.0" layoutY="519.0" prefHeight="34.0" prefWidth="124.0" text="Label" />
       <ComboBox fx:id="buildingsComboBox" layoutX="817.0" layoutY="523.0" prefWidth="150.0" promptText="Выберите объект" />
       <Button fx:id="sendBtn" layoutX="722.0" layoutY="519.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="86.0" style="-fx-background-radius: 15;" text="Отправить" />
     </children>

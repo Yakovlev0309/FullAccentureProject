@@ -54,7 +54,7 @@
                 </Tab>
             </tabs>
         </TabPane>
-      <Label fx:id="userLabel" layoutX="986.0" layoutY="519.0" prefHeight="20.0" prefWidth="124.0" text="Label" />
+      <Label fx:id="userLabel" layoutX="986.0" layoutY="519.0" prefHeight="34.0" prefWidth="124.0" text="Label" />
       <Button fx:id="actionBtn" layoutX="519.0" layoutY="519.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" />
     </children>
 </AnchorPane>
