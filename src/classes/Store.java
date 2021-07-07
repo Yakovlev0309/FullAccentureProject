@@ -1,6 +1,4 @@
-package sample;
-
-import java.util.ArrayList;
+package classes;
 
 public class Store extends Building {
 

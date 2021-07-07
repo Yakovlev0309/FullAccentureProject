@@ -1,12 +1,11 @@
 package repository;
 
-import sample.Building;
-import sample.Product;
-import sample.User;
+import classes.Building;
+import classes.Product;
+import classes.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Random;
 

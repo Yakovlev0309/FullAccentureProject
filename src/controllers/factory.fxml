@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -8,17 +9,17 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="1109.0" style="-fx-background-color: #B1B5AE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.storageController">
+<AnchorPane prefHeight="555.0" prefWidth="1109.0" style="-fx-background-color: #B1B5AE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.factoryController">
     <children>
-      <Button fx:id="exitBtn" layoutX="7.0" layoutY="520.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" style="-fx-background-radius: 15;" text="Выход" />
-        <Button fx:id="backBtn" layoutX="74.0" layoutY="519.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />
-        <TabPane prefHeight="519.0" prefWidth="1110.0" tabClosingPolicy="UNAVAILABLE">
+      <Button fx:id="exitBtn" layoutX="7.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Выход" />
+        <Button fx:id="backBtn" layoutX="79.0" layoutY="520.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" text="Назад" />
+        <TabPane prefHeight="520.0" prefWidth="1109.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
-                <Tab fx:id="productTab" text="Товар">
+                <Tab fx:id="productTab" text="Товары">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="488.0" prefWidth="1110.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="872.0">
                             <children>
-                                <TableView fx:id="productTable" prefHeight="492.0" prefWidth="1109.0">
+                                <TableView fx:id="productTable" layoutY="-2.0" prefHeight="494.0" prefWidth="1110.0">
                                     <columns>
                                         <TableColumn fx:id="idClmn" prefWidth="30.0" text="ID" />
                                         <TableColumn fx:id="ptypeClmn" prefWidth="80.0" text="Наименование" />
@@ -35,7 +36,7 @@
                 </Tab>
                 <Tab fx:id="userTab" text="Сотрудники">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="872.0">
                             <children>
                                 <TableView fx:id="userTable" prefHeight="492.0" prefWidth="1109.0">
                                     <columns>
@@ -54,7 +55,9 @@
                 </Tab>
             </tabs>
         </TabPane>
+      <Button fx:id="actionBtn" layoutX="493.0" layoutY="519.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" style="-fx-background-radius: 15;" text="Произвести товар" />
       <Label fx:id="userLabel" layoutX="986.0" layoutY="519.0" prefHeight="20.0" prefWidth="124.0" text="Label" />
-      <Button fx:id="actionBtn" layoutX="519.0" layoutY="519.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-radius: 15;" />
+      <ComboBox fx:id="buildingsComboBox" layoutX="817.0" layoutY="523.0" prefWidth="150.0" promptText="Выберите объект" />
+      <Button fx:id="sendBtn" layoutX="722.0" layoutY="519.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="86.0" style="-fx-background-radius: 15;" text="Отправить" />
     </children>
 </AnchorPane>

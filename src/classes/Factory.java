@@ -1,6 +1,4 @@
-package sample;
-
-import repository.Products;
+package classes;
 
 public class Factory extends Building {
 

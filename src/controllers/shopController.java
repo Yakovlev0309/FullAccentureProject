@@ -1,9 +1,7 @@
-package sample;
+package controllers;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -15,24 +13,29 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import repository.Buildings;
+import classes.Product;
+import classes.User;
 
-public class factoryController extends BuildingController implements EnhancedController {
+public class shopController extends BuildingController implements EnhancedController{
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
-    private URL location;
+    private Tab prodTab;
+
+//    @FXML
+//    private Tab userTab;
+
+//    @FXML
+//    private URL location;
+
+//    @FXML
+//    private Button backBtn;
 
     @FXML
-    private Tab productTab;
+    private javafx.scene.control.TitledPane TitledPane;
 
-//    @FXML
-//    public Tab userTab;
-//
-//    @FXML
-//    public Button backBtn;
     //region Товары {...}
     @FXML
     private TableView<Product> productTable;
@@ -72,16 +75,12 @@ public class factoryController extends BuildingController implements EnhancedCon
     //endregion
 
 //    private User user;
-    @FXML
-    private Button sendBtn;
 
     @FXML
     private Button exitBtn;
 
     ObservableList<Product> products = FXCollections.observableArrayList();
     ObservableList<User> users = FXCollections.observableArrayList();
-
-    ObservableList<Building> buildings = FXCollections.observableArrayList();
 
     @FXML
     void initialize() {
@@ -105,15 +104,13 @@ public class factoryController extends BuildingController implements EnhancedCon
         productTable.setItems(products);
         userTable.setItems(users);
 
-        buildings.setAll(Buildings.getBuildings("storage"));
-        buildingsComboBox.setItems(buildings);
-
         backBtn.setOnAction(event -> {
+            backBtn.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
             Parent root;
             Stage stage = new Stage();
-            loader.setLocation(getClass().getResource("/sample/general.fxml"));
+            loader.setLocation(getClass().getResource("/controllers/general.fxml"));
             try {
                 loader.load();
             } catch (IOException e) {
@@ -132,7 +129,7 @@ public class factoryController extends BuildingController implements EnhancedCon
             FXMLLoader loader = new FXMLLoader();
             Parent root;
             Stage stage = new Stage();
-            loader.setLocation(getClass().getResource("/sample/sample.fxml"));
+            loader.setLocation(getClass().getResource("/controllers/sample.fxml"));
             try {
                 loader.load();
             } catch (IOException e) {
@@ -145,16 +142,10 @@ public class factoryController extends BuildingController implements EnhancedCon
             stage.show();
         });
         actionBtn.setOnAction(event -> {
-            Facade.makeNewProduct(user.getBuilding(), user);
-            updateTable();
-        });
-
-        sendBtn.setOnAction(event -> {
             TableView.TableViewSelectionModel<Product> model = productTable.getSelectionModel();
             Product product = model.getSelectedItem();
-            Building building = buildingsComboBox.getValue();
-            if(product != null && building != null){
-                user.getBuilding().sendTo(building, product);
+            if(product != null){
+                user.getBuilding().deleteProduct(product);
             }
             updateTable();
         });

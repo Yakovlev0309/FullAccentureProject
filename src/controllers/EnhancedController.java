@@ -1,8 +1,6 @@
-package sample;
+package controllers;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
+import classes.User;
 
 public interface EnhancedController {
     public void setUser(User user);

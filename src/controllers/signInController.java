@@ -1,4 +1,4 @@
-package sample;
+package controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,10 +14,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
 import repository.Buildings;
+import classes.Building;
+import classes.User;
 
 public class signInController {
 
@@ -81,7 +82,7 @@ public class signInController {
 //            user.AddUser(nameField.getText(), surnameField.getText(), logInField.getText(), passwordField.getText(), buildingField.getValue(), shiftField.getValue());
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/sample/general.fxml"));
+            loader.setLocation(getClass().getResource("/controllers/general.fxml"));
             generalController controller;
             try {
                 loader.load();
@@ -100,7 +101,7 @@ public class signInController {
         backBtn.setOnAction(event -> {
             backBtn.getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/sample/general.fxml"));
+            loader.setLocation(getClass().getResource("/controllers/general.fxml"));
             generalController controller;
             try {
                 loader.load();

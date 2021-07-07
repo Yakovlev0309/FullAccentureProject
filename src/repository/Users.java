@@ -1,9 +1,9 @@
 package repository;
 
 import org.jetbrains.annotations.Nullable;
-import sample.Building;
-import sample.Product;
-import sample.User;
+import classes.Building;
+import classes.Product;
+import classes.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

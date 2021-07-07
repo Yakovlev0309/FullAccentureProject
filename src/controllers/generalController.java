@@ -1,4 +1,4 @@
-package sample;
+package controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -13,8 +13,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
+import classes.Facade;
+import classes.User;
 
-    public class generalController implements EnhancedController {
+public class generalController implements EnhancedController {
 
         @FXML
         private ResourceBundle resources;
@@ -57,14 +59,14 @@ import javafx.stage.Stage;
         storageBtn.setOnAction(event -> {
             storageBtn.getScene().getWindow().hide();
             building_name = "Склад №1";
-            SetUrlAndTitle("/sample/storage.fxml", building_name);
+            SetUrlAndTitle("/controllers/storage.fxml", building_name);
             openNewController();
         });
 
         shop1Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
             building_name = "Магазин №1";
-            SetUrlAndTitle("/sample/shop.fxml", building_name);
+            SetUrlAndTitle("/controllers/shop.fxml", building_name);
             openNewController();
 
         });
@@ -72,7 +74,7 @@ import javafx.stage.Stage;
         shop2Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
             building_name = "Магазин №2";
-            SetUrlAndTitle("/sample/shop.fxml", building_name);
+            SetUrlAndTitle("/controllers/shop.fxml", building_name);
             openNewController();
 
         });
@@ -80,14 +82,14 @@ import javafx.stage.Stage;
         shop3Btn.setOnAction(event -> {
             shopBtn.getScene().getWindow().hide();
             building_name = "Магазин №3";
-            SetUrlAndTitle("/sample/shop.fxml", building_name);
+            SetUrlAndTitle("/controllers/shop.fxml", building_name);
             openNewController();
         });
 
         factoryBtn.setOnAction(event -> {
             factoryBtn.getScene().getWindow().hide();
             building_name = "Завод №1";
-            SetUrlAndTitle("/sample/factory.fxml", building_name);
+            SetUrlAndTitle("/controllers/factory.fxml", building_name);
             openNewController();
         });
 
@@ -95,7 +97,7 @@ import javafx.stage.Stage;
             FXMLLoader loader = new FXMLLoader();
             Parent root;
             Stage stage = new Stage();
-            loader.setLocation(getClass().getResource("/sample/sample.fxml"));
+            loader.setLocation(getClass().getResource("/controllers/sample.fxml"));
             try {
                 loader.load();
             } catch (IOException e) {
@@ -110,7 +112,7 @@ import javafx.stage.Stage;
 
         signUpBtn.setOnAction(event -> {
             signUpBtn.getScene().getWindow().hide();
-            SetUrlAndTitle("/sample/signIn.fxml", "Регистрация пользователя");
+            SetUrlAndTitle("/controllers/signIn.fxml", "Регистрация пользователя");
             FXMLLoader loader = new FXMLLoader();
             Parent root;
             Stage stage = new Stage();

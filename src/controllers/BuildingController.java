@@ -1,10 +1,12 @@
-package sample;
+package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+import classes.Building;
+import classes.User;
 
 public abstract class BuildingController {
 

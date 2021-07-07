@@ -1,4 +1,4 @@
-package sample;
+package classes;
 
 import repository.Buildings;
 import repository.Products;

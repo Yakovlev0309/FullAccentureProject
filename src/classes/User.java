@@ -1,4 +1,4 @@
-package sample;
+package classes;
 
 import repository.Database;
 import repository.Users;

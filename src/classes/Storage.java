@@ -1,4 +1,4 @@
-package sample;
+package classes;
 
 public class Storage extends Building {
 

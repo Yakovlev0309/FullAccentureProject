@@ -1,4 +1,4 @@
-package sample;
+package controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,26 +14,28 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import classes.Product;
+import classes.User;
 
-public class shopController extends BuildingController implements EnhancedController{
+public class storageController extends BuildingController implements EnhancedController{
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
-    private Tab prodTab;
+    private Tab productTab;
 
 //    @FXML
 //    private Tab userTab;
 
-//    @FXML
-//    private URL location;
+    @FXML
+    private URL location;
 
 //    @FXML
 //    private Button backBtn;
 
     @FXML
-    private javafx.scene.control.TitledPane TitledPane;
+    private TitledPane TitledPane;
 
     //region Товары {...}
     @FXML
@@ -109,7 +111,7 @@ public class shopController extends BuildingController implements EnhancedContro
             FXMLLoader loader = new FXMLLoader();
             Parent root;
             Stage stage = new Stage();
-            loader.setLocation(getClass().getResource("/sample/general.fxml"));
+            loader.setLocation(getClass().getResource("/controllers/general.fxml"));
             try {
                 loader.load();
             } catch (IOException e) {
@@ -128,7 +130,7 @@ public class shopController extends BuildingController implements EnhancedContro
             FXMLLoader loader = new FXMLLoader();
             Parent root;
             Stage stage = new Stage();
-            loader.setLocation(getClass().getResource("/sample/sample.fxml"));
+            loader.setLocation(getClass().getResource("/controllers/sample.fxml"));
             try {
                 loader.load();
             } catch (IOException e) {
@@ -139,14 +141,6 @@ public class shopController extends BuildingController implements EnhancedContro
             stage.setTitle("Авторизация");
             stage.setScene(new Scene(root, 1109, 555));
             stage.show();
-        });
-        actionBtn.setOnAction(event -> {
-            TableView.TableViewSelectionModel<Product> model = productTable.getSelectionModel();
-            Product product = model.getSelectedItem();
-            if(product != null){
-                user.getBuilding().deleteProduct(product);
-            }
-            updateTable();
         });
     }
 

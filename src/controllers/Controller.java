@@ -1,4 +1,4 @@
-package sample;
+package controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +16,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
+import classes.Facade;
+import classes.User;
 
 public class Controller {
 
@@ -76,20 +78,20 @@ public class Controller {
 
             switch (user.getType()) {
                 case "director":
-                    url = "/sample/general.fxml";
+                    url = "/controllers/general.fxml";
                     title = "Главное меню";
                     break;
                 default:
                     title = user.getBuilding().getName();
                     switch(user.getBuilding().getType()){
                         case "factory":
-                            url = "/sample/factory.fxml";
+                            url = "/controllers/factory.fxml";
                             break;
                         case "storage":
-                            url = "/sample/storage.fxml";
+                            url = "/controllers/storage.fxml";
                             break;
                         case "store":
-                            url = "/sample/shop.fxml";
+                            url = "/controllers/shop.fxml";
                     }
                     switch (user.getType()) {
                         case "worker":
